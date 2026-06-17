@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<!-- v2.1 修复访问信息源链接 -->
+<!-- v2.2 访问信息源→百度精准搜索来源+标题 -->
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -426,7 +426,13 @@ function renderReport(date, containerId){
         html += '<div class="card"><h2>'+sec.title+'</h2>';
         if(sec.items){
           sec.items.forEach(function(item){
-            var sourceUrl = item.siteUrl || (item.url ? item.url : '');
+            // 智能生成信息源链接：用来源+标题在百度搜索，能直接找到相关报道页
+            var sourceUrl = item.siteUrl || '';
+            // 如果siteUrl只是首页链接（非搜狗搜索），则附加标题关键词生成精准搜索
+            if(sourceUrl && sourceUrl.indexOf('weixin.sogou.com') === -1 && sourceUrl.indexOf('sogou.com') === -1) {
+              sourceUrl = 'https://www.baidu.com/s?wd=' + encodeURIComponent(item.source + ' ' + item.title);
+            }
+            if(!sourceUrl && item.url) sourceUrl = item.url;
             html += '<div class="item"><h3>'+item.title+'</h3>';
             html += '<div class="source">来源：<b>'+item.source+'</b></div>';
             html += '<p>'+item.text+'</p>';
