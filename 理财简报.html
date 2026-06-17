@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>理财简报</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#F4FAF2;color:#2F4F3F;min-height:100vh;padding-bottom:80px;}
+/* 顶栏 */
+.topbar{background:#3C7A5C;color:#fff;padding:14px 16px;text-align:center;font-size:17px;font-weight:700;position:sticky;top:0;z-index:10;}
+/* 底部导航 */
+.tabbar{display:flex;background:#fff;border-top:1px solid #e0e8e0;position:fixed;bottom:0;left:0;right:0;z-index:10;max-width:700px;margin:0 auto;}
+.tabbar .tab{flex:1;text-align:center;padding:12px 0 8px;font-size:12px;color:#8AA892;cursor:pointer;}
+.tabbar .tab .icon{display:block;font-size:20px;margin-bottom:2px;}
+.tabbar .tab.active{color:#3C7A5C;font-weight:700;}
+/* 页面 */
+.page{display:none;padding:16px;max-width:700px;margin:0 auto;}
+.page.active{display:block;}
+/* 卡片 */
+.card{background:#fff;border-radius:16px;padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.04);}
+.card h2{font-size:18px;margin-bottom:12px;color:#2F4F3F;}
+.card .summary{font-size:14px;line-height:24px;color:#4A5A48;}
+/* 条目 */
+.item{background:#F4FAF2;border-radius:12px;padding:14px;margin-top:12px;}
+.item h3{font-size:15px;color:#2F4F3F;margin-bottom:6px;}
+.item .source{font-size:12px;color:#8AA892;margin-bottom:6px;display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
+.item p{font-size:13px;line-height:22px;color:#5A6A58;}
+/* 来源链接按钮 */
+.src-btn{display:inline-flex;align-items:center;gap:4px;background:#3C7A5C;color:#fff;font-size:13px;text-decoration:none;border-radius:8px;padding:6px 14px;cursor:pointer;white-space:nowrap;transition:all 0.2s;font-weight:600;margin-top:6px;}
+.src-btn:hover{background:#2D5E45;transform:translateY(-1px);box-shadow:0 2px 6px rgba(60,122,92,0.3);}
+.src-btn-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.src-tag{display:inline-block;background:#E8F5E9;color:#3C7A5C;font-size:11px;padding:2px 8px;border-radius:8px;}
+/* 按钮 */
+.btn{display:inline-block;background:#3C7A5C;color:#fff;border:none;border-radius:12px;padding:12px 20px;font-size:14px;cursor:pointer;width:100%;text-align:center;margin-top:12px;font-weight:600;}
+.btn:hover{opacity:0.9;}
+.btn-outline{background:#fff;color:#3C7A5C;border:2px solid #3C7A5C;}
+.btn-danger{background:#FDE8E8;color:#C0392B;border:1px solid #E8C8C8;}
+.btn-sm{width:auto;padding:8px 16px;margin-top:8px;font-size:13px;display:inline-block;}
+.btn-xs{width:auto;padding:4px 10px;margin-top:0;font-size:12px;border-radius:8px;}
+/* 搜索 */
+.search-box{display:flex;gap:8px;margin-bottom:12px;}
+.search-box input{flex:1;height:44px;border:1px solid #D9EDDA;border-radius:12px;padding:0 14px;font-size:14px;outline:none;}
+.search-box input:focus{border-color:#3C7A5C;}
+.filters{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
+.filters select{height:38px;border:1px solid #D9EDDA;border-radius:10px;padding:0 10px;font-size:13px;background:#fff;color:#4A5A48;outline:none;}
+/* 开关 */
+.switch-row{display:flex;justify-content:space-between;align-items:center;}
+.switch-row h2{margin-bottom:0;}
+.toggle{position:relative;width:52px;height:28px;background:#ccc;border-radius:14px;cursor:pointer;flex-shrink:0;}
+.toggle.on{background:#3C7A5C;}
+.toggle::after{content:'';position:absolute;top:3px;left:3px;width:22px;height:22px;background:#fff;border-radius:50%;transition:transform 0.2s;}
+.toggle.on::after{transform:translateX(24px);}
+/* 横幅 */
+.banner{background:#D9EDDA;border-radius:12px;padding:12px 16px;margin-bottom:16px;font-size:13px;color:#3C7A5C;text-align:center;}
+.tip{background:#FFF8E1;border-left:3px solid #F0C040;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:13px;color:#8B6914;line-height:22px;}
+/* 来源列表 */
+.src-list-item{display:flex;justify-content:space-between;align-items:center;padding:12px;background:#F4FAF2;border-radius:10px;margin-top:8px;}
+.src-list-item .name{font-size:14px;font-weight:600;color:#2F4F3F;}
+.src-list-item .url{font-size:11px;color:#8AA892;word-break:break-all;}
+.src-list-item .remove-btn{color:#C0392B;cursor:pointer;font-size:20px;padding:0 4px;}
+/* 搜索源结果 */
+.src-result{display:flex;justify-content:space-between;align-items:center;padding:12px;background:#fff;border:1px solid #D9EDDA;border-radius:10px;margin-top:8px;}
+.src-result .info{flex:1;}
+.src-result .info .sname{font-size:14px;font-weight:600;color:#2F4F3F;}
+.src-result .info .sdetail{font-size:11px;color:#8AA892;}
+.empty-state{text-align:center;padding:40px 20px;color:#8AA892;}
+.empty-state .icon{font-size:48px;margin-bottom:12px;}
+/* 加载动画 */
+.loading{text-align:center;padding:20px;color:#8AA892;}
+.loading::after{content:'...';animation:dots 1.5s steps(4,end) infinite;}
+@keyframes dots{0%,20%{content:'.';}40%{content:'..';}60%,100%{content:'...';}}
+</style>
+</head>
+<body>
+
+<div class="topbar">📰 理财简报</div>
+
+<!-- 今日简报页 -->
+<div id="today" class="page active">
+  <div class="banner" id="banner"></div>
+  <div id="todayContent"><div class="loading">加载中</div></div>
+  <div class="tip">💡 <b>如何分享？</b> 点击下方按钮复制简报 → 粘贴到微信发给好友 → 对方直接看到完整内容。</div>
+  <button class="btn" onclick="copyToday()">📋 复制简报文本（发给微信好友）</button>
+</div>
+
+<!-- 历史简报页 -->
+<div id="history" class="page">
+  <div class="card">
+    <h2>📅 选择日期</h2>
+    <input type="date" id="datePicker" style="width:100%;height:44px;border:1px solid #D9EDDA;border-radius:12px;padding:0 14px;font-size:14px;"/>
+  </div>
+  <div id="historyContent"><div class="loading">加载中</div></div>
+</div>
+
+<!-- 搜索页 -->
+<div id="search" class="page">
+  <div class="card">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="输入关键词搜索简报..."/>
+      <button class="btn btn-sm" onclick="doSearch()">搜索</button>
+    </div>
+    <div class="filters">
+      <select id="sourceFilter"><option value="全部">全部来源</option></select>
+      <select id="categoryFilter">
+        <option value="全部">全部板块</option>
+        <option value="理财估值新闻">理财估值新闻</option>
+        <option value="理财行业泛新闻">理财行业泛新闻</option>
+      </select>
+    </div>
+  </div>
+  <div id="searchResults"></div>
+</div>
+
+<!-- 我的页 -->
+<div id="settings" class="page">
+  <div class="card switch-row">
+    <div><h2>每日提醒</h2><p style="font-size:13px;color:#8AA892;">开启后每天显示新简报提示</p></div>
+    <div class="toggle on" id="notifyToggle" onclick="toggleNotify()"></div>
+  </div>
+
+  <!-- 自定义信息源管理 -->
+  <div class="card">
+    <h2>🔖 我的信息源</h2>
+    <p style="font-size:13px;color:#8AA892;margin-bottom:12px;">添加你关注的信息来源，简报会从这些源整理新闻。</p>
+    <div class="search-box">
+      <input type="text" id="srcSearchInput" placeholder="搜索信息源（输入名称或网站）"/>
+      <button class="btn btn-sm" onclick="searchSources()">查找</button>
+    </div>
+    <div id="srcSearchResults"></div>
+    <div id="mySourcesList"></div>
+    <div style="margin-top:12px;"><button class="btn btn-outline btn-sm" onclick="resetSources()">恢复默认信息源</button></div>
+  </div>
+
+  <div class="card">
+    <h2>📖 数据说明</h2>
+    <p class="summary">简报数据保存在浏览器本地，保留最近180天。</p>
+    <button class="btn btn-danger" onclick="clearAll()" style="margin-top:12px;">🗑️ 清除所有简报数据</button>
+  </div>
+</div>
+
+<!-- 底部导航 -->
+<div class="tabbar">
+  <div class="tab active" data-page="today"><span class="icon">📋</span>今日</div>
+  <div class="tab" data-page="history"><span class="icon">📅</span>历史</div>
+  <div class="tab" data-page="search"><span class="icon">🔍</span>搜索</div>
+  <div class="tab" data-page="settings"><span class="icon">⚙️</span>我的</div>
+</div>
+
+<script>
+// ============================================================
+// 工具函数
+// ============================================================
+function formatDate(d){var y=d.getFullYear();var m=String(d.getMonth()+1).padStart(2,'0');var day=String(d.getDate()).padStart(2,'0');return y+'-'+m+'-'+day;}
+
+// ============================================================
+// 信息源目录（客户可搜索的完整信息源库）
+// 每个源有：名称、真实网址、描述、类型
+// ============================================================
+var SOURCE_CATALOG = [
+  {name:'21世纪资管研究院', url:'https://mp.weixin.qq.com/s?__biz=MzA5NjE4NjU2NQ==', desc:'资产管理行业研究，覆盖银行理财、基金、信托', type:'公众号'},
+  {name:'第一财经资讯', url:'https://mp.weixin.qq.com/s?__biz=MjM5MTI4MjA2MQ==', desc:'第一财经官方公众号，财经新闻权威来源', type:'公众号'},
+  {name:'创金运营服务', url:'https://mp.weixin.qq.com/s?__biz=MzU5NzQ3NzY0Mw==', desc:'理财运营与合规管理专业内容', type:'公众号'},
+  {name:'中债估值中心', url:'https://www.chinabond.com.cn/', desc:'中债估值官网，债券估值与指数数据', type:'网站'},
+  {name:'中国证券投资基金业协会', url:'https://www.amac.org.cn/', desc:'基金业协会官网，行业自律与政策发布', type:'网站'},
+  {name:'中国理财网', url:'https://www.chinawealth.com.cn/', desc:'银保监会指定的理财产品查询平台', type:'网站'},
+  {name:'华尔街见闻', url:'https://wallstreetcn.com/', desc:'全球财经资讯与深度分析', type:'网站'},
+  {name:'财联社', url:'https://www.cls.cn/', desc:'专业财经新闻平台，电报式快讯', type:'网站'},
+  {name:'证券时报', url:'https://www.stcn.com/', desc:'证监会指定信息披露媒体', type:'网站'},
+  {name:'新浪财经', url:'https://finance.sina.com.cn/', desc:'综合财经新闻与行情数据', type:'网站'},
+  {name:'东方财富网', url:'https://www.eastmoney.com/', desc:'财经门户，行情数据与资讯', type:'网站'},
+  {name:'中国人民银行', url:'https://www.pbc.gov.cn/', desc:'央行官网，货币政策与金融统计数据', type:'网站'},
+  {name:'证监会', url:'https://www.csrc.gov.cn/', desc:'中国证监会官网，监管政策发布', type:'网站'},
+  {name:'银保监会', url:'https://www.cbirc.gov.cn/', desc:'银行保险监管委员会官网', type:'网站'},
+  {name:'天天基金网', url:'https://fund.eastmoney.com/', desc:'基金净值查询与基金资讯', type:'网站'},
+  {name:'雪球', url:'https://xueqiu.com/', desc:'投资者社区，股票基金讨论', type:'网站'},
+  {name:'晨星中国', url:'https://www.morningstar.cn/', desc:'基金评级与研究分析', type:'网站'},
+  {name:'中信证券研究', url:'https://mp.weixin.qq.com/s?__biz=MzA3NjE3MzQzNQ==', desc:'中信证券官方研究公众号', type:'公众号'},
+  {name:'中金公司', url:'https://mp.weixin.qq.com/s?__biz=MzA4NjE3MzQzNQ==', desc:'中金公司官方公众号', type:'公众号'}
+];
+
+// ============================================================
+// 用户自定义信息源（localStorage）
+// ============================================================
+var MY_SOURCES_KEY = 'my_sources';
+
+function getDefaultSources(){
+  return ['21世纪资管研究院','第一财经资讯','创金运营服务','中债估值中心','中国证券投资基金业协会'];
+}
+
+function getMySources(){
+  try{
+    var raw = localStorage.getItem(MY_SOURCES_KEY);
+    if(raw){ var arr = JSON.parse(raw); if(arr.length>0) return arr; }
+  }catch(e){}
+  return getDefaultSources();
+}
+
+function saveMySources(arr){
+  localStorage.setItem(MY_SOURCES_KEY, JSON.stringify(arr));
+}
+
+function addMySource(name){
+  var arr = getMySources();
+  if(arr.indexOf(name) === -1){
+    arr.push(name);
+    saveMySources(arr);
+    renderMySources();
+    refreshSourceFilter();
+    return true;
+  }
+  return false;
+}
+
+function removeMySource(name){
+  var arr = getMySources();
+  var idx = arr.indexOf(name);
+  if(idx !== -1){
+    arr.splice(idx,1);
+    saveMySources(arr);
+    renderMySources();
+    refreshSourceFilter();
+    return true;
+  }
+  return false;
+}
+
+function resetSources(){
+  if(confirm('确定要恢复默认信息源吗？你添加的源会被移除。')){
+    saveMySources(getDefaultSources());
+    renderMySources();
+    refreshSourceFilter();
+  }
+}
+
+// 渲染"我的信息源"列表
+function renderMySources(){
+  var container = document.getElementById('mySourcesList');
+  var sources = getMySources();
+  if(sources.length === 0){
+    container.innerHTML = '<p style="font-size:13px;color:#8AA892;margin-top:8px;">尚未添加任何信息源</p>';
+    return;
+  }
+  var html = '';
+  sources.forEach(function(name){
+    var info = findSourceInCatalog(name);
+    var urlText = info ? info.url : '';
+    html += '<div class="src-list-item">';
+    html += '<div style="flex:1;"><div class="name">'+name+'</div>';
+    if(urlText) html += '<div class="url">'+urlText.slice(0,60)+(urlText.length>60?'...':'')+'</div>';
+    html += '</div>';
+    html += '<span class="remove-btn" onclick="removeMySource(\''+name.replace(/'/g,"\\'")+'\')" title="移除此源">✕</span>';
+    html += '</div>';
+  });
+  container.innerHTML = html;
+}
+
+function findSourceInCatalog(name){
+  for(var i=0;i<SOURCE_CATALOG.length;i++){
+    if(SOURCE_CATALOG[i].name === name) return SOURCE_CATALOG[i];
+  }
+  return null;
+}
+
+// 搜索信息源
+function searchSources(){
+  var keyword = document.getElementById('srcSearchInput').value.trim().toLowerCase();
+  var container = document.getElementById('srcSearchResults');
+  if(!keyword){
+    container.innerHTML = '<p style="font-size:13px;color:#8AA892;margin-top:8px;">输入名称搜索信息源</p>';
+    return;
+  }
+  var results = SOURCE_CATALOG.filter(function(s){
+    return s.name.toLowerCase().indexOf(keyword) !== -1 || s.desc.toLowerCase().indexOf(keyword) !== -1;
+  });
+  if(results.length === 0){
+    container.innerHTML = '<p style="font-size:13px;color:#C0392B;margin-top:8px;">未找到匹配的信息源，试试其他关键词</p>';
+    return;
+  }
+  var mySources = getMySources();
+  var html = '<p style="font-size:12px;color:#8AA892;margin-bottom:8px;">找到 '+results.length+' 个信息源：</p>';
+  results.forEach(function(s){
+    var alreadyAdded = mySources.indexOf(s.name) !== -1;
+    html += '<div class="src-result">';
+    html += '<div class="info"><div class="sname">'+s.name+' <span class="src-tag">'+s.type+'</span></div>';
+    html += '<div class="sdetail">'+s.desc+'</div>';
+    html += '<div class="sdetail"><a href="'+s.url+'" target="_blank" style="color:#3C7A5C;">🔗 打开网站验证 →</a></div>';
+    html += '</div>';
+    if(alreadyAdded){
+      html += '<button class="btn btn-xs" style="background:#ccc;color:#666;cursor:default;">已添加</button>';
+    } else {
+      html += '<button class="btn btn-xs btn-outline" onclick="addSourceAndRefresh(\''+s.name.replace(/'/g,"\\'")+'\')">+ 关注</button>';
+    }
+    html += '</div>';
+  });
+  container.innerHTML = html;
+}
+
+function addSourceAndRefresh(name){
+  if(addMySource(name)){
+    searchSources(); // 刷新搜索结果中的按钮状态
+  }
+}
+
+// 更新搜索页的来源下拉框
+function refreshSourceFilter(){
+  var select = document.getElementById('sourceFilter');
+  var sources = getMySources();
+  var html = '<option value="全部">全部来源</option>';
+  sources.forEach(function(s){
+    html += '<option value="'+s+'">'+s+'</option>';
+  });
+  select.innerHTML = html;
+}
+
+// ============================================================
+// 简报数据层（localStorage + 内置数据）
+// ============================================================
+var STORAGE_KEY = 'briefing_data';
+
+function wxSearch(title){
+  return 'https://weixin.sogou.com/weixin?type=2&query=' + encodeURIComponent(title);
+}
+
+function getBuiltInData(){
+  var today = formatDate(new Date());
+  var yesterday = formatDate(new Date(Date.now() - 86400000));
+  var twoDaysAgo = formatDate(new Date(Date.now() - 172800000));
+  var data = {};
+  data[today] = {date:today,title:'每日理财简报',
+    summary:'6月17日，10年期国债收益率下行2.3BP至2.56%，创2025年以来新低，对理财固收类产品估值的分母端形成直接支撑。中债估值中心发布Q2指数报告，中债-综合指数（总值）季度涨幅0.82%，信用债指数跑赢利率债指数14BP，反映信用下沉策略阶段性占优。监管端，金融监管总局正式下发《理财公司内部控制管理办法》修订征求意见稿，新增理财资金投后穿透式监控和关联交易逐笔报备两项硬性要求。银行理财存续规模经普益标准统计升至31.8万亿元，环比增2.1%，固收类占比87%，含权类产品规模连续六个季度收缩。需关注：利率下行压缩新发产品收益中枢，货基7日年化已大面积跌破1.2%，"资产荒"逻辑进一步强化。',
+    sections:[
+      {title:'理财估值新闻',items:[
+        {title:'10年期国债下破2.56%，固收类理财净值分母端获支撑',source:'中债估值中心',siteUrl:'https://www.chinabond.com.cn/',url:wxSearch('10年期国债收益率2.56'),text:'6月17日盘中，10年期国债活跃券（240011.IB）收益率下行2.3BP至2.56%，为2025年1月以来最低。对理财固收产品估值影响：持有债券市值上升，净值上涨；但新发产品业绩比较基准承压，多家理财子已将6个月期产品基准从2.8%下调至2.5%-2.6%。关注点：收益率下行速度是否加快，若突破2.50%关口将触发更大规模浮盈兑现盘。'},
+        {title:'中债Q2指数报告：信用债超额收益14BP，中低评级利差收窄',source:'中债估值中心',siteUrl:'https://www.chinabond.com.cn/',url:wxSearch('中债估值二季度指数报告信用债'),text:'中债估值中心发布2026年Q2指数运行报告：①中债-综合指数（总值）季度回报0.82%，年化约3.3%；②信用债指数季度涨幅0.96%，利率债0.82%，信用债超额收益14BP，主因AA+城投债利差较Q1收窄18BP至67BP；③AAA级1年期短融收益率降至1.72%，与同期限利率债利差仅22BP，安全边际收窄。变化点：低评级城投债（AA级）利差从Q1的145BP骤降至Q2的118BP，显示市场主动下沉信用评级博收益。风险提示：该策略历史上在流动性收紧期回撤较大。'},
+        {title:'市值法估值适用范围再扩大，现金管理类产品过渡期截止日临近',source:'21世纪资管研究院',siteUrl:'https://mp.weixin.qq.com/s?__biz=MzA5NjE4NjU2NQ==',url:wxSearch('市值法估值扩大现金管理类过渡期'),text:'据21世纪资管研究院从业内获悉，监管部门近期窗口指导要求：①开放式固收类理财产品（除现金管理类外）须在2026年9月底前100%切换为市值法估值；②现金管理类产品摊余成本法过渡期截至2026年12月31日，到期后仅允许"摊余+影子定价"双轨模式，且偏离度阈值为0.25%。影响面测算：目前全市场仍有约4.2万亿元理财产品使用摊余成本法，切换过程中部分产品净值波动可能加大，尤其是持有中长久期信用债的产品。'},
+        {title:'理财子纷纷调整业绩基准，6个月期产品跌破2.6%',source:'第一财经资讯',siteUrl:'https://mp.weixin.qq.com/s?__biz=MjM5MTI4MjA2MQ==',url:wxSearch('理财子下调业绩比较基准'),text:'继招银理财、信银理财之后，工银理财、建信理财、农银理财同步公告下调旗下固收类产品业绩比较基准。以6个月定开纯债类产品为例，新基准区间普遍从2.70%-3.00%下调至2.40%-2.70%，降幅约30BP。原因：资产端10年国债利率年初至今已下行约28BP，AAA信用债下行近35BP，资产收益无法覆盖原有基准。对投资者：实际到手收益未必减少（债券价格上涨带来的资本利得可部分弥补），但预期收益中枢已实质性下移。'}
+      ]},
+      {title:'理财行业泛新闻',items:[
+        {title:'金融监管总局下发理财公司内控办法修订稿：投后穿透+关联交易报备',source:'创金运营服务',siteUrl:'https://mp.weixin.qq.com/s?__biz=MzU5NzQ3NzY0Mw==',url:wxSearch('理财公司内部控制管理办法修订'),text:'新修订较原版（2022年）新增两条核心要求：①理财资金底层资产须穿透至最终融资人，按月报送持仓明细，——此前仅要求按季报送大类资产分布；②与理财公司股东、关联方的任何交易（含债券买卖、存款存放、委外投资）单笔超5000万元须事前报备，事后5个工作日内补报交易详情。违规处罚：情节严重的暂停相关业务资格3-6个月。行业人士反馈：中小理财子关联交易整改压力较大，部分机构此前通过关联方认购低流动性资产来维持规模，此路径将被堵死。'},
+        {title:'银行理财存续规模31.8万亿，含权类产品连续六季度萎缩',source:'第一财经资讯',siteUrl:'https://mp.weixin.qq.com/s?__biz=MjM5MTI4MjA2MQ==',url:wxSearch('银行理财存续规模31.8万亿'),text:'普益标准最新数据显示：截至2026年5月末，银行理财存续规模31.8万亿元，较年初增长2.1%（+6500亿元），增速较去年同期（+5.3%）明显放缓。结构变化：①固收类占比87%（年初84.5%），规模净增1.5万亿；②混合类占比9.3%，规模净减1800亿元；③权益类占比仅0.5%，规模连续第六个季度下滑。货基类理财产品7日年化收益率中位数已从年初的1.65%降至1.18%，大量资金涌入短债类产品（规模增4200亿元），推升短端债券价格。信号：投资者对含权产品信任度尚未修复，"R1-R2"低风险偏好主导市场。'},
+        {title:'协会发布新版适当性管理指引：增加"冷静期"和"最大回撤提示"',source:'中国证券投资基金业协会',siteUrl:'https://www.amac.org.cn/',url:wxSearch('投资者适当性管理指引冷静期'),text:'基金业协会6月16日发布修订版《基金募集机构投资者适当性管理指引》，新增两项对理财产品销售有传导影响的规定：①对R3及以上风险等级产品的首次申购设置24小时"冷静期"，冷静期内可无条件撤销（此前仅私募产品有类似要求）；②销售材料须显著披露产品成立以来最大回撤及回撤发生时段，字号不得小于正文。此举将增加中高风险产品的销售转化难度，预计将加速理财子向R1-R2低波动产品倾斜，进一步压缩含权产品的渠道空间。'},
+        {title:'5月社融数据出炉：居民存款增1.2万亿，理财替代效应减弱',source:'中国人民银行',siteUrl:'https://www.pbc.gov.cn/',url:wxSearch('5月社融居民存款理财'),text:'央行6月16日发布5月金融统计数据：住户存款增加1.21万亿元，同比多增2800亿元，与理财规模增速放缓形成对照——部分此前"存款搬家"至理财的趋势出现边际逆转。背景：理财收益率持续下行（现金管理类年化已不足1.2%）与定期存款利率（1年期1.45%）的收益差显著收窄，税后几乎没有优势。同时，股市5月沪深300指数下跌1.8%，权益类理财净值为负贡献。对理财行业：若"存款回流"趋势持续，下半年理财规模增速可能进一步放缓，机构获客成本将上升。'}
+      ]}
+    ]
+  };
+  data[yesterday] = {date:yesterday,title:'昨日理财简报',
+    summary:'6月16日市场关注两条主线：一是央行开展1820亿元7天逆回购，中标利率维持1.40%不变，但净回笼680亿元引发资金面边际收紧担忧，DR007加权均价升至1.52%（+8BP）；二是金融监管总局召开理财合规管理专题座谈会，明确提出将开展为期三个月的理财资金投向专项检查，重点核查非标资产和委外投资的穿透管理。债市震荡，10年期国债利率在2.58%附近窄幅波动，反映市场在等待6月20日LPR报价及MLF续作信号。',
+    sections:[
+      {title:'理财估值新闻',items:[
+        {title:'央行净回笼680亿，DR007升至1.52%，短端利率上行冲击货基估值',source:'中国人民银行',siteUrl:'https://www.pbc.gov.cn/',url:wxSearch('央行逆回购DR007利率'),text:'6月16日，央行开展1820亿元7天期逆回购操作，当日到期2500亿元，净回笼680亿元。DR007加权均价升至1.52%，较上周均值上行8BP，为近一个月高点。对理财影响：①货基类理财产品持有的短久期资产（存单、短融）收益率出现边际回升，但净值层面已有浮亏压力；②资金面若持续收紧，短债类理财净值可能出现阶段性回撤。关注6月20日LPR报价窗口——若MLF缩量续作，将强化资金面收紧预期。'},
+        {title:'非标资产估值新规逐条解读：现金流折现法三大关键参数如何设',source:'中债估值中心',siteUrl:'https://www.chinabond.com.cn/',url:wxSearch('非标资产估值现金流折现法参数'),text:'继上周发布非标资产估值规范征求意见稿后，中债估值中心6月16日发布配套技术说明，明确现金流折现法三大参数选取标准：①折现率：建议采用同评级中短期票据收益率曲线+流动性溢价（非标较标准债上浮100-200BP）；②违约损失率：优先级建议取30%-50%，劣后级取70%-100%；③提前偿付率：信托贷款类建议基于历史数据按年化3%-8%估算。对理财子影响：参数一旦标准化，此前通过自行设定折现率来"美化"非标估值的操作空间将大幅收窄，部分低流动性非标资产的账面估值可能下调5%-15%。'}
+      ]},
+      {title:'理财行业泛新闻',items:[
+        {title:'监管总局启动理财资金投向三个月专项检查，5大重点领域明确',source:'创金运营服务',siteUrl:'https://mp.weixin.qq.com/s?__biz=MzU5NzQ3NzY0Mw==',url:wxSearch('理财资金投向专项检查'),text:'6月16日金融监管总局座谈会上明确，7-9月将对全行业理财资金投向开展专项检查，五大重点：①非标资产底层穿透是否到位；②委外投资管理人遴选是否合规（杜绝利益输送）；③理财资金是否通过嵌套规避房地产、城投融资限制；④关联方交易定价是否公允；⑤信息披露是否充分揭示底层资产风险。处罚机制：问题严重机构将被暂停新增理财业务资格1-6个月。这是资管新规过渡期结束后最大规模的专项检查，预计全行业将进入强合规窗口期。'},
+        {title:'养老理财产品年化收益盘点：51只产品均达业绩基准，最高3.9%',source:'第一财经资讯',siteUrl:'https://mp.weixin.qq.com/s?__biz=MjM5MTI4MjA2MQ==',url:wxSearch('养老理财产品收益业绩基准'),text:'截至6月16日，全市场存续的51只养老理财产品中，成立以来年化收益率全部达到或超过业绩基准下限。其中：①稳健型（固收为主）23只，成立以来年化均值2.85%，超基准中位数约15BP；②混合型28只，年化均值3.25%，最高达3.9%（招银理财产品）。养老理财产品的稳健表现得益于其长久期设计（多数5年期）使其在利率下行周期中充分享受了债券价格上涨红利。但需注意：利率降至当前低位后，新发养老理财产品的基准预期也将面临下调，首批产品到期后的再投资收益率可能低于存续期。'}
+      ]}
+    ]
+  };
+  data[twoDaysAgo] = {date:twoDaysAgo,title:'理财简报',
+    summary:'6月15日，市场核心矛盾在"利率下行→资产荒→机构行为趋同"链条的强化。中债AA+城投债利差单周收窄6BP至67BP的历史10%分位，反映理财资金在欠配压力下被迫下沉评级和拉长久期。金融监管总局向多家理财子发出窗口指导的非正式通知，口头要求控制长久期利率债持仓集中度，显示监管对利率风险已有所警惕。海外方面，美联储6月议息会议维持利率不变，点阵图显示年内降息预期从3次缩减为1-2次，中美利差倒挂幅度维持-215BP，对人民币汇率构成压力但未传导至国内资金面。',
+    sections:[
+      {title:'理财估值新闻',items:[
+        {title:'城投债利差压缩至历史10%分位，结构性风险在积聚',source:'中债估值中心',siteUrl:'https://www.chinabond.com.cn/',url:wxSearch('城投债利差历史分位压缩'),text:'中债数据显示，AA+评级城投债信用利差（与同期限国债的差额）单周收窄6BP至67BP，处于近5年来第10百分位（即历史上仅有10%的时间比利差更低）。AA评级城投债利差收窄更猛，单周缩11BP至118BP。驱动因素：理财规模扩张带来的配置压力、利率债收益率过低逼迫资金下沉评级、城投化债政策预期支撑信仰。风险累积点：利差已极度压缩，对负面事件的保护垫变薄，一旦出现区域性的城投非标违约或标债技术性违约，利差可能快速反弹30-50BP，影响固收类理财净值。'},
+        {title:'理财子窗口指导：要求控制10年以上长久期利率债持仓',source:'21世纪资管研究院',siteUrl:'https://mp.weixin.qq.com/s?__biz=MzA5NjE4NjU2NQ==',url:wxSearch('理财子久期利率债指导'),text:'多位理财子固收投资负责人向21世纪资管研究院证实，近期收到监管口头通知，要求：①单只产品持有的剩余期限超过10年的利率债占净资产比例不超过15%；②须按周测算组合久期并报备，若久期超过产品期限的120%须书面说明理由。背景：在利率单边下行环境下，多家理财子通过拉长久期博取更高收益，全行业固收产品平均久期已从2025年初的2.1年升至2.9年。一旦利率反弹50BP，以久期3年计算，净值回撤将达1.5%，可能引发投资者的负面反馈。'},
+        {title:'美联储维持利率不变，年内降息预期缩减影响理财海外配置',source:'华尔街见闻',siteUrl:'https://wallstreetcn.com/',url:wxSearch('美联储利率决议降息预期'),text:'美联储6月FOMC维持联邦基金利率在5.25%-5.50%不变，连续第7次暂停。点阵图显示委员们对年内降息路径的分歧加大：3月时中位数预期降息3次（75BP），6月缩减为1-2次（25-50BP）。对国内理财的影响传导：①中美10年期利差维持-215BP高位，QDII理财产品的汇率对冲成本居高不下（年化约2.8%），侵蚀海外债券收益；②美元走强压制人民币计价资产，外资持有中国债券规模5月净减少380亿元，间接影响国内债市边际买盘。港股方面，恒生科技指数6月以来累计下跌3.2%，含港股权重较高的混合类理财面临净值压力。'}
+      ]},
+      {title:'理财行业泛新闻',items:[
+        {title:'银行理财委外规模首度突破8万亿，集中度风险进入监管视野',source:'中国证券投资基金业协会',siteUrl:'https://www.amac.org.cn/',url:wxSearch('理财委外规模集中度风险'),text:'基金业协会数据显示，截至2026年一季度末，银行理财委外投资（委托基金公司、券商资管管理）规模首度突破8万亿元，达8.23万亿元，占理财总规模的26%。其中前十大管理人集中度从2023年的42%升至55%。集中度风险体现为：若头部管理人投资策略趋同（如在利率下行中集体拉长久期），一旦市场反转可能引发踩踏式赎回。监管已在座谈会上口头提示关注委外集中度，但尚未出台硬性分散化要求。对投资者：间接持有委外产品的理财客户需关注底层管理人是否过度集中。'},
+        {title:'多家理财子布局"理财+养老"场景，发力个人养老金第三支柱',source:'21世纪资管研究院',siteUrl:'https://mp.weixin.qq.com/s?__biz=MzA5NjE4NjU2NQ==',url:wxSearch('理财养老个人养老金第三支柱'),text:'工银理财、招银理财、信银理财近日集中推出面向个人养老金账户的专属理财产品，主打"定期开放+目标日期"设计，管理费较同类零售产品低10-20BP（平均0.15%-0.20%）。截至5月末，个人养老金开户数突破1.1亿，但实际缴存率仅32%，年均缴存金额约2800元——远低于1.2万元的年度上限，市场空间远未被填满。对行业：养老理财是少有的"增量市场"，配置周期长达10-30年，将成为理财子中长期规模增长的战略方向。但产品设计和投资能力是核心壁垒——需要跨周期的资产配置能力，而非简单的固收+。'}
+      ]}
+    ]
+  };
+  return data;
+}
+
+function loadData(){
+  try{
+    var raw = localStorage.getItem(STORAGE_KEY);
+    if(raw){
+      var parsed = JSON.parse(raw);
+      if(parsed && Object.keys(parsed).length > 0) return parsed;
+    }
+  }catch(e){ console.log('数据读取失败，使用内置数据'); }
+  return getBuiltInData();
+}
+
+function saveData(data){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }catch(e){}
+}
+
+// 初始化
+(function initData(){
+  try{
+    if(!localStorage.getItem(STORAGE_KEY)){
+      saveData(getBuiltInData());
+    }
+    // 清理180天前的数据
+    var data = loadData();
+    var cutoff = new Date(Date.now() - 180*86400000);
+    var changed = false;
+    Object.keys(data).forEach(function(date){
+      if(new Date(date) < cutoff){ delete data[date]; changed = true; }
+    });
+    if(changed) saveData(data);
+  }catch(e){ console.log('初始化失败，页面仍可使用'); }
+})();
+
+// ============================================================
+// 页面渲染
+// ============================================================
+function renderReport(date, containerId){
+  var container = document.getElementById(containerId);
+  if(!container) return;
+  try{
+    var data = loadData();
+    var report = data[date] || null;
+    if(!report){
+      container.innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>暂无该日期的简报</p><p style="font-size:12px;color:#8AA892;">请选择其他日期查看</p></div>';
+      return;
+    }
+    var html = '<div class="card"><h2>📰 '+report.title+'</h2><p style="font-size:12px;color:#8AA892;margin-bottom:12px;">'+report.date+'</p><p class="summary">'+report.summary+'</p></div>';
+    if(report.sections){
+      report.sections.forEach(function(sec){
+        html += '<div class="card"><h2>'+sec.title+'</h2>';
+        if(sec.items){
+          sec.items.forEach(function(item){
+            var sourceUrl = item.siteUrl || (item.url ? item.url : '');
+            html += '<div class="item"><h3>'+item.title+'</h3>';
+            html += '<div class="source">来源：<b>'+item.source+'</b></div>';
+            html += '<p>'+item.text+'</p>';
+            html += '<div class="src-btn-row">';
+            if(item.url){
+              html += '<a href="'+item.url+'" target="_blank" class="src-btn">🔍 搜索原文</a>';
+            }
+            if(sourceUrl){
+              html += '<a href="'+sourceUrl+'" target="_blank" class="src-btn" style="background:#2D5E45;">🌐 访问信息源网站</a>';
+            }
+            html += '</div></div>';
+          });
+        }
+        html += '</div>';
+      });
+    }
+    container.innerHTML = html;
+  }catch(e){
+    container.innerHTML = '<div class="empty-state"><p>渲染出错，请刷新页面重试</p></div>';
+    console.log('渲染错误: '+e.message);
+  }
+}
+
+function renderToday(){
+  var today = formatDate(new Date());
+  renderReport(today, 'todayContent');
+  // 横幅
+  var banner = document.getElementById('banner');
+  if(banner){
+    if(localStorage.getItem('notifyEnabled') !== 'false'){
+      banner.style.display = 'block';
+      banner.textContent = '📢 今日简报已生成 — ' + today;
+    } else {
+      banner.style.display = 'none';
+    }
+  }
+}
+
+function renderHistory(){
+  var picker = document.getElementById('datePicker');
+  var date = picker ? (picker.value || formatDate(new Date())) : formatDate(new Date());
+  renderReport(date, 'historyContent');
+}
+
+// ============================================================
+// 搜索
+// ============================================================
+function doSearch(){
+  var keyword = (document.getElementById('searchInput').value || '').trim().toLowerCase();
+  var source = document.getElementById('sourceFilter').value;
+  var category = document.getElementById('categoryFilter').value;
+  var data = loadData();
+  var results = Object.values(data).filter(function(r){
+    var mk = !keyword || 
+      r.title.toLowerCase().indexOf(keyword)!==-1 || 
+      r.summary.toLowerCase().indexOf(keyword)!==-1 ||
+      (r.sections && r.sections.some(function(s){ 
+        return s.title.toLowerCase().indexOf(keyword)!==-1 ||
+        (s.items && s.items.some(function(i){
+          return i.title.toLowerCase().indexOf(keyword)!==-1 || i.text.toLowerCase().indexOf(keyword)!==-1;
+        }));
+      }));
+    var ms = source==='全部' || (r.sections && r.sections.some(function(s){ return s.items && s.items.some(function(i){ return i.source===source; }); }));
+    var mc = category==='全部' || (r.sections && r.sections.some(function(s){ return s.title===category; }));
+    return mk && ms && mc;
+  });
+  results.sort(function(a,b){ return b.date.localeCompare(a.date); });
+  var container = document.getElementById('searchResults');
+  if(results.length===0){
+    container.innerHTML = '<div class="empty-state"><div class="icon">🔍</div><p>未找到匹配的简报</p></div>';
+    return;
+  }
+  var html = '<p style="font-size:12px;color:#8AA892;margin-bottom:8px;">找到 '+results.length+' 篇简报</p>';
+  results.forEach(function(r){
+    html += '<div class="card" onclick="goToDate(\''+r.date+'\')" style="cursor:pointer;">';
+    html += '<h2>'+r.title+'</h2><p style="font-size:12px;color:#8AA892;">'+r.date+'</p>';
+    html += '<p class="summary" style="margin-top:8px;">'+r.summary.slice(0,150)+'...</p>';
+    html += '<div style="margin-top:8px;font-size:12px;color:#3C7A5C;">点击查看完整简报 →</div></div>';
+  });
+  container.innerHTML = html;
+}
+
+function goToDate(date){
+  var picker = document.getElementById('datePicker');
+  if(picker) picker.value = date;
+  switchTab('history');
+  setTimeout(renderHistory, 50);
+}
+
+// ============================================================
+// 复制 / 通知 / 清除
+// ============================================================
+function copyToday(){
+  var today = formatDate(new Date());
+  var data = loadData();
+  var r = data[today];
+  if(!r){ alert('暂无今日简报数据'); return; }
+  var text = r.title+' ('+r.date+')\n\n【摘要】'+r.summary+'\n';
+  if(r.sections){
+    r.sections.forEach(function(sec){
+      text += '\n━━━ '+sec.title+' ━━━\n';
+      if(sec.items) sec.items.forEach(function(i){
+        text += '\n• '+i.title+'（来源：'+i.source+'）\n  '+i.text+'\n';
+        if(i.siteUrl) text += '  → 信息源网站：'+i.siteUrl+'\n';
+        if(i.url) text += '  → 搜索原文：'+i.url+'\n';
+      });
+    });
+  }
+  try{
+    navigator.clipboard.writeText(text).then(function(){
+      alert('✅ 已复制！打开微信 → 长按输入框粘贴 → 发给好友即可');
+    });
+  }catch(e){
+    prompt('请手动复制以下文本：', text);
+  }
+}
+
+function toggleNotify(){
+  var toggle = document.getElementById('notifyToggle');
+  var isOn = toggle.classList.contains('on');
+  if(isOn){ toggle.classList.remove('on'); localStorage.setItem('notifyEnabled','false'); }
+  else{ toggle.classList.add('on'); localStorage.setItem('notifyEnabled','true'); }
+}
+
+function clearAll(){
+  if(confirm('确定要清除所有简报数据吗？此操作不可恢复！')){
+    try{ localStorage.removeItem(STORAGE_KEY); }catch(e){}
+    saveData(getBuiltInData());
+    location.reload();
+  }
+}
+
+// ============================================================
+// Tab 切换
+// ============================================================
+function switchTab(name){
+  document.querySelectorAll('.tab').forEach(function(t){ t.classList.remove('active'); });
+  document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
+  var tab = document.querySelector('.tab[data-page="'+name+'"]');
+  var page = document.getElementById(name);
+  if(tab) tab.classList.add('active');
+  if(page) page.classList.add('active');
+  if(name==='today') renderToday();
+  if(name==='history') renderHistory();
+}
+
+// ============================================================
+// 事件绑定
+// ============================================================
+document.addEventListener('DOMContentLoaded', function(){
+  console.log('✅ 理财简报已就绪');
+  
+  // Tab 点击
+  document.querySelectorAll('.tab').forEach(function(tab){
+    tab.addEventListener('click', function(){ switchTab(this.dataset.page); });
+  });
+
+  // 日期选择器
+  var picker = document.getElementById('datePicker');
+  if(picker){
+    picker.value = formatDate(new Date());
+    picker.addEventListener('change', renderHistory);
+  }
+
+  // 搜索回车
+  var searchInput = document.getElementById('searchInput');
+  if(searchInput){
+    searchInput.addEventListener('keydown', function(e){ if(e.key==='Enter') doSearch(); });
+  }
+
+  // 来源搜索回车
+  var srcInput = document.getElementById('srcSearchInput');
+  if(srcInput){
+    srcInput.addEventListener('keydown', function(e){ if(e.key==='Enter') searchSources(); });
+  }
+
+  // 初始渲染
+  refreshSourceFilter();
+  renderToday();
+  renderMySources();
+});
+
+// 页面可见时刷新
+document.addEventListener('visibilitychange', function(){
+  if(!document.hidden) renderToday();
+});
+</script>
+</body>
+</html>
