@@ -1,0 +1,63 @@
+name: 理财简报更新（每周两次）
+
+on:
+  # 定时触发：北京时间周一和周四早上 8:00（UTC 0:00）
+  schedule:
+    - cron: "0 0 * * 1,4"
+
+  # 手动触发（方便测试）
+  workflow_dispatch:
+
+# 确保同一时间只有一个 workflow 在运行
+concurrency:
+  group: daily-briefing
+  cancel-in-progress: true
+
+jobs:
+  fetch-and-update:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: "scripts/requirements.txt"
+
+      - name: 安装 Python 依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      - name: 抓取理财新闻并生成简报
+        run: python scripts/fetch_briefing.py
+
+      - name: 检查是否有数据更新
+        id: check_changes
+        run: |
+          if git diff --quiet data/briefings.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "简报数据无变化，跳过提交"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "检测到简报数据更新"
+          fi
+
+      - name: 提交并推送简报数据
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/briefings.json
+          TODAY=$(TZ='Asia/Shanghai' date +%Y-%m-%d)
+          git commit -m "📰 更新理财简报 — ${TODAY}"
+          git push

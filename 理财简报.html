@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<!-- v3.0.1 信息源链接直达原文所在页面，移除搜索引擎跳转 -->
+<!-- v3.1.0 原文链接直达+日期网格+每周两次更新 -->
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -25,6 +25,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;b
 /* 条目 */
 .item{background:#F4FAF2;border-radius:12px;padding:14px;margin-top:12px;}
 .item h3{font-size:15px;color:#2F4F3F;margin-bottom:6px;}
+.item h3 a{color:#2F4F3F;text-decoration:none;cursor:default;}
+.item h3 a.has-link{color:#3C7A5C;text-decoration:underline;cursor:pointer;}
+.item h3 a.has-link:hover{color:#2D5E45;}
 .item .source{font-size:12px;color:#8AA892;margin-bottom:6px;display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
 .item p{font-size:13px;line-height:22px;color:#5A6A58;}
 /* 来源链接按钮 */
@@ -71,6 +74,21 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;b
 .loading{text-align:center;padding:20px;color:#8AA892;}
 .loading::after{content:'...';animation:dots 1.5s steps(4,end) infinite;}
 @keyframes dots{0%,20%{content:'.';}40%{content:'..';}60%,100%{content:'...';}}
+/* 日期网格 */
+.date-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;}
+.date-grid .dcell{text-align:center;padding:8px 4px;border-radius:8px;font-size:13px;cursor:pointer;background:#f0f5f1;color:#8AA892;transition:all 0.2s;}
+.date-grid .dcell.has-data{background:#D9EDDA;color:#3C7A5C;font-weight:600;cursor:pointer;}
+.date-grid .dcell.has-data:hover{background:#3C7A5C;color:#fff;transform:translateY(-1px);box-shadow:0 2px 6px rgba(60,122,92,0.3);}
+.date-grid .dcell.has-data.active{background:#3C7A5C;color:#fff;}
+.date-grid .dcell.no-data{background:#e8e8e8;color:#bbb;cursor:default;pointer-events:none;}
+.date-grid .dcell.today{border:2px solid #3C7A5C;}
+.date-month-label{grid-column:1/-1;font-size:14px;font-weight:700;color:#3C7A5C;padding:8px 0 4px;text-align:center;}
+.date-nav{display:flex;gap:8px;margin-bottom:12px;align-items:center;}
+.date-nav button{flex:1;background:#fff;border:1px solid #D9EDDA;border-radius:8px;padding:8px;cursor:pointer;font-size:14px;color:#3C7A5C;}
+.date-nav button:hover{background:#D9EDDA;}
+.date-nav .cur-month{flex:3;text-align:center;font-weight:700;color:#2F4F3F;}
+/* 数据来源提示 */
+.data-source-tip{font-size:11px;color:#8AA892;text-align:center;margin-top:8px;}
 </style>
 </head>
 <body>
@@ -89,7 +107,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;b
 <div id="history" class="page">
   <div class="card">
     <h2>📅 选择日期</h2>
-    <input type="date" id="datePicker" style="width:100%;height:44px;border:1px solid #D9EDDA;border-radius:12px;padding:0 14px;font-size:14px;"/>
+    <div class="date-nav">
+      <button onclick="navMonth(-1)">◀ 上月</button>
+      <div class="cur-month" id="curMonthLabel"></div>
+      <button onclick="navMonth(1)">下月 ▶</button>
+      <button onclick="navMonth(0)" style="flex:0.8;font-size:12px;">本月</button>
+    </div>
+    <div class="date-grid" id="dateGrid"></div>
+    <div class="data-source-tip">🟢 绿色 = 有简报可查看 | ⬜ 灰色 = 暂无数据</div>
   </div>
   <div id="historyContent"><div class="loading">加载中</div></div>
 </div>
@@ -135,7 +160,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;b
 
   <div class="card">
     <h2>📖 数据说明</h2>
-    <p class="summary">简报数据保存在浏览器本地，保留最近180天。每条新闻均附带信息源网站直达链接。</p>
+    <p class="summary">简报数据每周一、周四自动更新（每周两次），保留最近180天。每条新闻均附带信息源网站直达链接，点击标题或"阅读原文"按钮可直接跳转到原文页面验证内容真伪。</p>
     <button class="btn btn-danger" onclick="clearAll()" style="margin-top:12px;">🗑️ 清除所有简报数据</button>
   </div>
 </div>
@@ -389,14 +414,88 @@ function getBuiltInData(){
 }
 
 function loadData(){
+  // 优先从 localStorage 读取，同时尝试从服务器加载最新数据
+  var localData = {};
   try{
     var raw = localStorage.getItem(STORAGE_KEY);
     if(raw){
       var parsed = JSON.parse(raw);
-      if(parsed && Object.keys(parsed).length > 0) return parsed;
+      if(parsed && Object.keys(parsed).length > 0) localData = parsed;
     }
-  }catch(e){ console.log('数据读取失败，使用内置数据'); }
-  return getBuiltInData();
+  }catch(e){}
+
+  // 如果没有本地数据，使用内置数据作为初始值
+  if(Object.keys(localData).length === 0){
+    localData = getBuiltInData();
+  }
+
+  // 异步从服务器加载 data/briefings.json（静默更新）
+  fetchRemoteAndMerge(localData);
+
+  return localData;
+}
+
+var _remoteLoaded = false;
+var _remotePromise = null;
+
+function fetchRemoteAndMerge(localData){
+  if(_remotePromise) return _remotePromise;
+  _remotePromise = fetch('./data/briefings.json?v=' + Date.now())
+    .then(function(resp){
+      if(!resp.ok) throw new Error('HTTP ' + resp.status);
+      return resp.json();
+    })
+    .then(function(remoteData){
+      if(!remoteData || Object.keys(remoteData).length === 0) return localData;
+      // 合并远程数据到本地数据（远程数据覆盖同日期本地数据）
+      var merged = {};
+      // 先复制本地数据
+      Object.keys(localData).forEach(function(k){ merged[k] = localData[k]; });
+      // 远程数据覆盖/新增
+      Object.keys(remoteData).forEach(function(k){
+        merged[k] = remoteData[k];
+      });
+      // 保存合并后的数据
+      saveData(merged);
+      _remoteLoaded = true;
+      console.log('✅ 已从服务器同步 ' + Object.keys(remoteData).length + ' 天简报数据');
+      // 刷新当前页面显示
+      refreshCurrentView();
+      return merged;
+    })
+    .catch(function(err){
+      console.log('⚠️ 远程数据加载失败，使用本地数据: ' + err.message);
+      return localData;
+    });
+  return _remotePromise;
+}
+
+function refreshCurrentView(){
+  // 刷新当前活跃的tab
+  var activePage = document.querySelector('.page.active');
+  if(!activePage) return;
+  if(activePage.id === 'today') renderToday();
+  if(activePage.id === 'history') renderDateGrid();
+}
+
+var _dataCache = null;
+var _dataCacheTime = 0;
+
+function getData(){
+  // 带缓存的读取，避免重复解析
+  var now = Date.now();
+  if(_dataCache && (now - _dataCacheTime) < 2000) return _dataCache;
+  try{
+    var raw = localStorage.getItem(STORAGE_KEY);
+    if(raw){
+      _dataCache = JSON.parse(raw);
+      _dataCacheTime = now;
+      return _dataCache;
+    }
+  }catch(e){}
+  _dataCache = getBuiltInData();
+  _dataCacheTime = now;
+  return _dataCache;
 }
 
 function saveData(data){
@@ -417,6 +516,8 @@ function saveData(data){
       if(new Date(date) < cutoff){ delete data[date]; changed = true; }
     });
     if(changed) saveData(data);
+    // 触发远程数据加载（异步，静默更新）
+    fetchRemoteAndMerge(data);
   }catch(e){ console.log('初始化失败，页面仍可使用'); }
 })();
 
@@ -427,7 +528,7 @@ function renderReport(date, containerId){
   var container = document.getElementById(containerId);
   if(!container) return;
   try{
-    var data = loadData();
+    var data = getData();
     var report = data[date] || null;
     if(!report){
       container.innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>暂无该日期的简报</p><p style="font-size:12px;color:#8AA892;">请选择其他日期查看</p></div>';
@@ -439,11 +540,17 @@ function renderReport(date, containerId){
         html += '<div class="card"><h2>'+sec.title+'</h2>';
         if(sec.items){
           sec.items.forEach(function(item){
-            // v3.0: item.url 为直达原文所在页面的链接，item.siteUrl 为信息源首页/公众号搜狗页面
+            // v3.1: item.url 为直达原文所在页面的链接，标题可点击跳转
             var articleUrl = item.url || '';
             var siteUrl = item.siteUrl || '';
             var isWechatSrc = siteUrl.indexOf('weixin.sogou.com') !== -1;
-            html += '<div class="item"><h3>'+item.title+'</h3>';
+            html += '<div class="item">';
+            // 标题：有原文链接时可点击直接跳转
+            if(articleUrl){
+              html += '<h3><a href="'+articleUrl+'" target="_blank" class="has-link" title="点击跳转到原文页面">📎 '+item.title+'</a></h3>';
+            } else {
+              html += '<h3>'+item.title+'</h3>';
+            }
             html += '<div class="source">来源：<b>'+item.source+'</b></div>';
             html += '<p>'+item.text+'</p>';
             html += '<div class="src-btn-row">';
@@ -451,7 +558,7 @@ function renderReport(date, containerId){
             if(articleUrl){
               html += '<a href="'+articleUrl+'" target="_blank" class="src-btn">📄 阅读原文</a>';
             }
-            // 始终显示信息源链接：网站显示"信息源网站"，公众号显示"搜狗微信·公众号主页"
+            // 始终显示信息源链接
             if(siteUrl){
               var siteLabel = isWechatSrc ? '🔍 搜狗微信·公众号主页' : '🏠 信息源网站';
               html += '<a href="'+siteUrl+'" target="_blank" class="src-btn" style="background:#2D5E45;">'+siteLabel+'</a>';
@@ -484,10 +591,115 @@ function renderToday(){
   }
 }
 
-function renderHistory(){
-  var picker = document.getElementById('datePicker');
-  var date = picker ? (picker.value || formatDate(new Date())) : formatDate(new Date());
+// ============================================================
+// 日期网格（替代原生 date input）
+// ============================================================
+var _historyMonth = null; // {year, month} 当前查看的年月
+
+function getHistoryMonth(){
+  if(_historyMonth) return _historyMonth;
+  var now = new Date();
+  _historyMonth = {year: now.getFullYear(), month: now.getMonth()+1};
+  return _historyMonth;
+}
+
+function setHistoryMonth(y, m){
+  _historyMonth = {year: y, month: m};
+}
+
+function navMonth(delta){
+  var hm = getHistoryMonth();
+  var m = hm.month + delta;
+  var y = hm.year;
+  if(delta === 0){
+    var now = new Date();
+    y = now.getFullYear();
+    m = now.getMonth() + 1;
+  } else {
+    if(m > 12){ m = 1; y++; }
+    if(m < 1){ m = 12; y--; }
+  }
+  setHistoryMonth(y, m);
+  renderDateGrid();
+}
+
+function renderDateGrid(){
+  var hm = getHistoryMonth();
+  var data = getData();
+  var availableDates = {};
+  Object.keys(data).forEach(function(d){ availableDates[d] = true; });
+
+  // 更新月份标签
+  var label = document.getElementById('curMonthLabel');
+  if(label) label.textContent = hm.year + '年 ' + hm.month + '月';
+
+  // 计算该月第一天和最后一天
+  var firstDay = new Date(hm.year, hm.month-1, 1);
+  var lastDay = new Date(hm.year, hm.month, 0);
+  var startDow = firstDay.getDay(); // 0=周日
+
+  var todayStr = formatDate(new Date());
+  var todayParts = todayStr.split('-');
+
+  var html = '';
+  // 星期头
+  var dayNames = ['日','一','二','三','四','五','六'];
+  dayNames.forEach(function(dn){
+    html += '<div style="text-align:center;font-size:11px;color:#8AA892;padding:4px 0;">'+dn+'</div>';
+  });
+
+  // 填充前面的空白
+  for(var i=0; i<startDow; i++){
+    html += '<div class="dcell no-data"></div>';
+  }
+
+  // 日期格子
+  for(var d=1; d<=lastDay.getDate(); d++){
+    var dateStr = hm.year + '-' + String(hm.month).padStart(2,'0') + '-' + String(d).padStart(2,'0');
+    var hasData = availableDates[dateStr];
+    var isToday = (dateStr === todayStr);
+    var cls = 'dcell';
+    if(hasData){
+      cls += ' has-data';
+    } else {
+      cls += ' no-data';
+    }
+    if(isToday) cls += ' today';
+    if(hasData){
+      html += '<div class="'+cls+'" onclick="selectHistoryDate(\''+dateStr+'\')">'+d+'</div>';
+    } else {
+      html += '<div class="'+cls+'">'+d+'</div>';
+    }
+  }
+
+  var grid = document.getElementById('dateGrid');
+  if(grid) grid.innerHTML = html;
+
+  // 默认选中今天（如果今天有数据）
+  if(availableDates[todayStr]){
+    selectHistoryDate(todayStr);
+  }
+}
+
+function selectHistoryDate(date){
+  // 高亮选中
+  document.querySelectorAll('.date-grid .dcell').forEach(function(cell){
+    cell.classList.remove('active');
+  });
+  // 找到对应日期的格子并高亮
+  var cells = document.querySelectorAll('.date-grid .dcell.has-data');
+  var parts = date.split('-');
+  var day = parseInt(parts[2], 10);
+  cells.forEach(function(cell){
+    if(parseInt(cell.textContent, 10) === day){
+      cell.classList.add('active');
+    }
+  });
   renderReport(date, 'historyContent');
+}
+
+function renderHistory(){
+  renderDateGrid();
 }
 
 // ============================================================
@@ -497,7 +709,7 @@ function doSearch(){
   var keyword = (document.getElementById('searchInput').value || '').trim().toLowerCase();
   var source = document.getElementById('sourceFilter').value;
   var category = document.getElementById('categoryFilter').value;
-  var data = loadData();
+  var data = getData();
   var results = Object.values(data).filter(function(r){
     var mk = !keyword || 
       r.title.toLowerCase().indexOf(keyword)!==-1 || 
@@ -529,10 +741,16 @@ function doSearch(){
 }
 
 function goToDate(date){
-  var picker = document.getElementById('datePicker');
-  if(picker) picker.value = date;
+  // 解析日期，切换到对应月份
+  var parts = date.split('-');
+  if(parts.length === 3){
+    setHistoryMonth(parseInt(parts[0],10), parseInt(parts[1],10));
+  }
   switchTab('history');
-  setTimeout(renderHistory, 50);
+  setTimeout(function(){
+    renderDateGrid();
+    selectHistoryDate(date);
+  }, 100);
 }
 
 // ============================================================
@@ -540,7 +758,7 @@ function goToDate(date){
 // ============================================================
 function copyToday(){
   var today = formatDate(new Date());
-  var data = loadData();
+  var data = getData();
   var r = data[today];
   if(!r){ alert('暂无今日简报数据'); return; }
   var text = r.title+' ('+r.date+')\n\n【摘要】'+r.summary+'\n';
@@ -596,19 +814,12 @@ function switchTab(name){
 // 事件绑定
 // ============================================================
 document.addEventListener('DOMContentLoaded', function(){
-  console.log('✅ 理财简报 v3.0 — 信息源链接直达原文页面');
-  
+  console.log('✅ 理财简报 v3.1 — 原文直达+日期网格+每周两次更新');
+
   // Tab 点击
   document.querySelectorAll('.tab').forEach(function(tab){
     tab.addEventListener('click', function(){ switchTab(this.dataset.page); });
   });
-
-  // 日期选择器
-  var picker = document.getElementById('datePicker');
-  if(picker){
-    picker.value = formatDate(new Date());
-    picker.addEventListener('change', renderHistory);
-  }
 
   // 搜索回车
   var searchInput = document.getElementById('searchInput');
