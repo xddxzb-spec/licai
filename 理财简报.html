@@ -4,6 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>理财简报</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -178,6 +181,25 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;b
 // 工具函数
 // ============================================================
 function formatDate(d){var y=d.getFullYear();var m=String(d.getMonth()+1).padStart(2,'0');var day=String(d.getDate()).padStart(2,'0');return y+'-'+m+'-'+day;}
+
+// 为不同来源生成搜索URL（用于信息验证）
+function getSourceSearchUrl(sourceName, title){
+  var searchTemplates = {
+    '东方财富网': function(t){ return 'https://www.eastmoney.com/search/default.html?param=' + encodeURIComponent(t); },
+    '新浪财经': function(t){ return 'https://search.sina.com.cn/?q=' + encodeURIComponent(t); },
+    '证券时报': function(t){ return 'https://www.stcn.com/search/list?keyword=' + encodeURIComponent(t); },
+    '财联社': function(t){ return 'https://www.cls.cn/search?keyword=' + encodeURIComponent(t); },
+    '华尔街见闻': function(t){ return 'https://wallstreetcn.com/search?q=' + encodeURIComponent(t); },
+    '中债估值中心': function(t){ return 'https://www.chinabond.com.cn/Channel/19012917'; },
+    '中国理财网': function(t){ return 'https://www.chinawealth.com.cn/'; },
+    '中国证券投资基金业协会': function(t){ return 'https://www.amac.org.cn/xwfb/xwdt/'; },
+    '中国人民银行': function(t){ return 'https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/index.html'; }
+  };
+  if(searchTemplates[sourceName]){
+    return searchTemplates[sourceName](title);
+  }
+  return 'https://www.baidu.com/s?wd=' + encodeURIComponent(sourceName + ' ' + title);
+}
 
 // ============================================================
 // 信息源目录（客户可搜索的完整信息源库）
@@ -558,9 +580,12 @@ function renderReport(date, containerId){
             if(articleUrl){
               html += '<a href="'+articleUrl+'" target="_blank" class="src-btn">📄 阅读原文</a>';
             }
-            // 始终显示信息源链接
+            // 始终显示"在来源网站搜索"按钮（用于信息验证）
+            var searchUrl = getSourceSearchUrl(item.source, item.title);
+            html += '<a href="'+searchUrl+'" target="_blank" class="src-btn" style="background:#764ba2;">🔍 在来源网站搜索</a>';
+            // 显示信息源主页链接
             if(siteUrl){
-              var siteLabel = isWechatSrc ? '🔍 搜狗微信·公众号主页' : '🏠 信息源网站';
+              var siteLabel = isWechatSrc ? '🔗 公众号主页' : '🏠 信息源网站';
               html += '<a href="'+siteUrl+'" target="_blank" class="src-btn" style="background:#2D5E45;">'+siteLabel+'</a>';
             }
             html += '</div></div>';
@@ -732,10 +757,23 @@ function doSearch(){
   }
   var html = '<p style="font-size:12px;color:#8AA892;margin-bottom:8px;">找到 '+results.length+' 篇简报</p>';
   results.forEach(function(r){
-    html += '<div class="card" onclick="goToDate(\''+r.date+'\')" style="cursor:pointer;">';
-    html += '<h2>'+r.title+'</h2><p style="font-size:12px;color:#8AA892;">'+r.date+'</p>';
-    html += '<p class="summary" style="margin-top:8px;">'+r.summary.slice(0,150)+'...</p>';
-    html += '<div style="margin-top:8px;font-size:12px;color:#3C7A5C;">点击查看完整简报 →</div></div>';
+    var titleHtml = item.title;
+    var articleUrl = item.url || '';
+    if(articleUrl){
+      titleHtml = '<a href="'+articleUrl+'" target="_blank" style="color:#2F4F3F;text-decoration:none;">📎 '+item.title+'</a>';
+    }
+    var searchUrl = getSourceSearchUrl(item.source, item.title);
+    html += '<div class="card" style="cursor:auto;">';
+    html += '<div style="font-size:11px;color:#8AA892;margin-bottom:8px;">'+item.date+' · '+item.section+'</div>';
+    html += '<div style="font-size:14px;margin-bottom:6px;">'+titleHtml+'</div>';
+    html += '<div style="font-size:12px;color:#8AA892;margin-bottom:6px;">来源：'+item.source+'</div>';
+    html += '<div style="font-size:13px;line-height:20px;color:#5A6A58;">'+item.text+'</div>';
+    html += '<div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;">';
+    if(articleUrl){
+      html += '<a href="'+articleUrl+'" target="_blank" class="src-btn" style="padding:4px 10px;font-size:12px;flex:0;">📄 阅读原文</a>';
+    }
+    html += '<a href="'+searchUrl+'" target="_blank" class="src-btn" style="padding:4px 10px;font-size:12px;flex:0;background:#764ba2;">🔍 搜索验证</a>';
+    html += '</div></div>';
   });
   container.innerHTML = html;
 }
