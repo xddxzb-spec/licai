@@ -1,4 +1,102 @@
 {
+  "2026-06-25": {
+    "date": "2026-06-25",
+    "title": "每日理财简报",
+    "summary": "2026-06-25理财市场关注要点：；估值方面共监测到3条相关动态；来源覆盖东方财富网、中国理财网等渠道；——科创50指数涨近4%再创历史新高 半导体板块大涨（东方财富网）；——国家金融监督管理总局发布《理财公司监管评级暂行办法》（中国理财网）；——国家金融监督管理总局有关司局负责人就《理财公司监管评级暂行办法》答记者问（中国理财网）；行业动态方面共监测到15条相关新闻；来源覆盖东方财富网、中国理财网等渠道；——33家A股公司提示风险！兴业科技：拟收购磷化铟业务被过度解读（东方财富网）；——两大芯片巨头大涨 韩国股市触发熔断（东方财富网）；——暴涨超1200% 触发临停！A股刚刚诞生10倍股 中一签赚27万元（东方财富网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "3ed48a41bec4",
+            "title": "科创50指数涨近4%再创历史新高 半导体板块大涨",
+            "text": "科创50指数涨近4%再创历史新高 半导体板块大涨",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202606243781354441.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "6468c2da4ca2",
+            "title": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "text": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "20965f176877",
+            "title": "国家金融监督管理总局有关司局负责人就《理财公司监管评级暂行办法》答记者问",
+            "text": "国家金融监督管理总局有关司局负责人就《理财公司监管评级暂行办法》答记者问",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "0e66b5895c35",
+            "title": "33家A股公司提示风险！兴业科技：拟收购磷化铟业务被过度解读",
+            "text": "33家A股公司提示风险！兴业科技：拟收购磷化铟业务被过度解读",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202606243781781918.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "e8257fbaab1e",
+            "title": "两大芯片巨头大涨 韩国股市触发熔断",
+            "text": "两大芯片巨头大涨 韩国股市触发熔断",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202606253782099024.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "fcad85aefe8e",
+            "title": "暴涨超1200% 触发临停！A股刚刚诞生10倍股 中一签赚27万元",
+            "text": "暴涨超1200% 触发临停！A股刚刚诞生10倍股 中一签赚27万元",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202606243781360618.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "12dfa509bd70",
+            "title": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "text": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_gywm/wzjs/wzjj/",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "ffeff339febc",
+            "title": "银行业理财登记托管中心有限公司关于做好中国理财网·理财行业统一信息披露平台验收工作的通知",
+            "text": "银行业理财登记托管中心有限公司关于做好中国理财网·理财行业统一信息披露平台验收工作的通知",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-06-25T04:08:16.080904",
+      "total_fetched": 22,
+      "total_published": 8,
+      "sources_used": [
+        "东方财富网",
+        "中国理财网"
+      ]
+    }
+  },
   "2026-06-20": {
     "date": "2026-06-20",
     "title": "每日理财简报",
