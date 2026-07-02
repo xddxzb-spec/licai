@@ -1,4 +1,93 @@
 {
+  "2026-07-02": {
+    "date": "2026-07-02",
+    "title": "每日理财简报",
+    "summary": "2026-07-02理财市场关注要点：；估值方面共监测到2条相关动态；来源覆盖东方财富网、中国理财网等渠道；——A股上半年收官！科创50指数大涨超64% 科技股一骑绝尘（东方财富网）；——国家金融监督管理总局发布《理财公司监管评级暂行办法》（中国理财网）；行业动态方面共监测到15条相关新闻；来源覆盖东方财富网、中国理财网等渠道；——A股交易新规将于7月6日起正式施行 主板ST股涨跌幅提至10%（东方财富网）；——5%调整至10%！A股迎交易新规！下周一正式实施（东方财富网）；——下周一 A股将告别5%涨跌停板 影响个股全名单来了（东方财富网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "2c91a0813ca8",
+            "title": "A股上半年收官！科创50指数大涨超64% 科技股一骑绝尘",
+            "text": "A股上半年收官！科创50指数大涨超64% 科技股一骑绝尘",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://topic.eastmoney.com/detail/zbscnzpd2026.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "6468c2da4ca2",
+            "title": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "text": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "6faf8304ce91",
+            "title": "A股交易新规将于7月6日起正式施行 主板ST股涨跌幅提至10%",
+            "text": "A股交易新规将于7月6日起正式施行 主板ST股涨跌幅提至10%",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607013790184331.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "8008b0e58d67",
+            "title": "5%调整至10%！A股迎交易新规！下周一正式实施",
+            "text": "5%调整至10%！A股迎交易新规！下周一正式实施",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607013790612897.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "f41e4b676ef0",
+            "title": "下周一 A股将告别5%涨跌停板 影响个股全名单来了",
+            "text": "下周一 A股将告别5%涨跌停板 影响个股全名单来了",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607013790283455.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "12dfa509bd70",
+            "title": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "text": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_gywm/wzjs/wzjj/",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "ffeff339febc",
+            "title": "银行业理财登记托管中心有限公司关于做好中国理财网·理财行业统一信息披露平台验收工作的通知",
+            "text": "银行业理财登记托管中心有限公司关于做好中国理财网·理财行业统一信息披露平台验收工作的通知",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-07-02T04:04:59.317572",
+      "total_fetched": 21,
+      "total_published": 7,
+      "sources_used": [
+        "东方财富网",
+        "中国理财网"
+      ]
+    }
+  },
   "2026-06-29": {
     "date": "2026-06-29",
     "title": "每日理财简报",
