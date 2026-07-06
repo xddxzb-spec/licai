@@ -1,4 +1,84 @@
 {
+  "2026-07-06": {
+    "date": "2026-07-06",
+    "title": "每日理财简报",
+    "summary": "2026-07-06理财市场关注要点：；估值方面共监测到1条相关动态；来源覆盖中国理财网等渠道；——国家金融监督管理总局发布《理财公司监管评级暂行办法》（中国理财网）；行业动态方面共监测到17条相关新闻；来源覆盖中国理财网、东方财富网等渠道；——告别5%涨跌停板！今起A股交易规则重要调整 影响个股全名单来了（东方财富网）；——78家A股公司预告半年报 其中68家公司业绩预喜 江波龙净利暴增超622倍（东方财富网）；——A股波动大如何守住利润？“黑天鹅”尾部风险管理是答案吗｜对话瑞锐投资袁磊（东方财富网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "6468c2da4ca2",
+            "title": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "text": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "789ede34f1a4",
+            "title": "告别5%涨跌停板！今起A股交易规则重要调整 影响个股全名单来了",
+            "text": "告别5%涨跌停板！今起A股交易规则重要调整 影响个股全名单来了",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607063794375980.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "f71a2f59ebe5",
+            "title": "78家A股公司预告半年报 其中68家公司业绩预喜 江波龙净利暴增超622倍",
+            "text": "78家A股公司预告半年报 其中68家公司业绩预喜 江波龙净利暴增超622倍",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607053794304492.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "822e5524ade1",
+            "title": "A股波动大如何守住利润？“黑天鹅”尾部风险管理是答案吗｜对话瑞锐投资袁磊",
+            "text": "A股波动大如何守住利润？“黑天鹅”尾部风险管理是答案吗｜对话瑞锐投资袁磊",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202605073730389683.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "1e0e759e5d00",
+            "title": "A股交易新规！7月6日正式施行",
+            "text": "A股交易新规！7月6日正式施行",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://topic.eastmoney.com/detail/agjyxg2026.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "47a178298853",
+            "title": "证监会发布再融资改革征求意见稿",
+            "text": "证监会发布再融资改革征求意见稿",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://topic.eastmoney.com/detail/zairongzi2026.html",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-07-06T04:08:33.256379",
+      "total_fetched": 22,
+      "total_published": 6,
+      "sources_used": [
+        "中国理财网",
+        "东方财富网"
+      ]
+    }
+  },
   "2026-07-02": {
     "date": "2026-07-02",
     "title": "每日理财简报",
