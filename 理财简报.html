@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<!-- v3.1.0 原文链接直达+日期网格+每周两次更新 -->
+<!-- v3.3.0 自动更新修复+原文链接补全 -->
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -462,7 +462,9 @@ var _remotePromise = null;
 
 function fetchRemoteAndMerge(localData){
   if(_remotePromise) return _remotePromise;
-  _remotePromise = fetch('./data/briefings.json?v=' + Date.now())
+  // 从数据源仓库实时拉取最新简报数据（raw.githubusercontent.com 支持CORS）
+  var DATA_SOURCE_URL = 'https://raw.githubusercontent.com/xddxzb-spec/financial-news-briefing/main/data/briefings.json';
+  _remotePromise = fetch(DATA_SOURCE_URL + '?v=' + Date.now(), {cache: 'no-store'})
     .then(function(resp){
       if(!resp.ok) throw new Error('HTTP ' + resp.status);
       return resp.json();

@@ -16,6 +16,7 @@ from collections import OrderedDict
 import requests
 import feedparser
 from bs4 import BeautifulSoup
+from urllib.parse import urljoin, urlparse
 
 # 添加脚本目录到 path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -97,6 +98,9 @@ def fetch_rss(source):
                 title = normalize_text(entry.get("title", ""))
                 summary = normalize_text(clean_html(entry.get("summary", entry.get("description", ""))))
                 link = entry.get("link", "")
+                # 补全相对链接为绝对链接
+                if link and not link.startswith("http"):
+                    link = urljoin(source["url"], link)
                 published = entry.get("published", entry.get("updated", ""))
 
                 if not title:
@@ -125,6 +129,8 @@ def _scrape_html_items(html, source):
     items = []
     try:
         soup = BeautifulSoup(html, "lxml")
+        base_url = source.get("url", "")  # 用于补全相对链接
+
         # 查找常见的新闻列表结构
         candidates = []
         for tag in soup.find_all(["a", "h2", "h3", "h4"]):
@@ -135,6 +141,9 @@ def _scrape_html_items(html, source):
                 if parent_a:
                     href = parent_a.get("href", "")
             if text and len(text) >= 8:
+                # 补全相对链接为绝对链接
+                if href:
+                    href = urljoin(base_url, href)
                 candidates.append((text, href))
 
         seen = set()
@@ -150,7 +159,7 @@ def _scrape_html_items(html, source):
                 "text": text[:300],
                 "source": source["name"],
                 "siteUrl": source.get("site_url", ""),
-                "url": href if href.startswith("http") else "",
+                "url": href if href and href.startswith("http") else "",
                 "category": classify_item(text, ""),
             }
             items.append(item)
