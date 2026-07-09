@@ -1,4 +1,93 @@
 {
+  "2026-07-09": {
+    "date": "2026-07-09",
+    "title": "每日理财简报",
+    "summary": "2026-07-09理财市场关注要点：；估值方面共监测到2条相关动态；来源覆盖中国理财网、东方财富网等渠道；——A股三大指数收跌 深成指与创业板指跌近2% 国资云概念股逆市大涨（东方财富网）；——国家金融监督管理总局发布《理财公司监管评级暂行办法》（中国理财网）；行业动态方面共监测到15条相关新闻；来源覆盖中国理财网、东方财富网等渠道；——韩国股市遭遇重挫进入技术性熊市（东方财富网）；——A股波动大如何守住利润？“黑天鹅”尾部风险管理是答案吗｜对话瑞锐投资袁磊（东方财富网）；——掘金2026年A股中报季（东方财富网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "c55811a379ae",
+            "title": "A股三大指数收跌 深成指与创业板指跌近2% 国资云概念股逆市大涨",
+            "text": "A股三大指数收跌 深成指与创业板指跌近2% 国资云概念股逆市大涨",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607083798321635.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "6468c2da4ca2",
+            "title": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "text": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202603/t20260317_854948180.html",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "c650f9b63571",
+            "title": "韩国股市遭遇重挫进入技术性熊市",
+            "text": "韩国股市遭遇重挫进入技术性熊市",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607083798517646.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "822e5524ade1",
+            "title": "A股波动大如何守住利润？“黑天鹅”尾部风险管理是答案吗｜对话瑞锐投资袁磊",
+            "text": "A股波动大如何守住利润？“黑天鹅”尾部风险管理是答案吗｜对话瑞锐投资袁磊",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202605073730389683.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "20ba896a15d3",
+            "title": "掘金2026年A股中报季",
+            "text": "掘金2026年A股中报季",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://topic.eastmoney.com/detail/agzbj2026.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "12dfa509bd70",
+            "title": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "text": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_gywm/wzjs/wzjj/",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "ffeff339febc",
+            "title": "银行业理财登记托管中心有限公司关于做好中国理财网·理财行业统一信息披露平台验收工作的通知",
+            "text": "银行业理财登记托管中心有限公司关于做好中国理财网·理财行业统一信息披露平台验收工作的通知",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202606/t20260605_855130714.html",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-07-09T03:53:13.652467",
+      "total_fetched": 21,
+      "total_published": 7,
+      "sources_used": [
+        "中国理财网",
+        "东方财富网"
+      ]
+    }
+  },
   "2026-07-06": {
     "date": "2026-07-06",
     "title": "每日理财简报",
