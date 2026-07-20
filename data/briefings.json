@@ -1,4 +1,93 @@
 {
+  "2026-07-20": {
+    "date": "2026-07-20",
+    "title": "每日理财简报",
+    "summary": "2026-07-20理财市场关注要点：；估值方面共监测到2条相关动态；来源覆盖中国理财网等渠道；——国家金融监督管理总局发布《理财公司监管评级暂行办法》（中国理财网）；——关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...（中国理财网）；行业动态方面共监测到17条相关新闻；来源覆盖东方财富网、中国理财网等渠道；——证监会今开座谈会 促进市场稳定健康发展（东方财富网）；——稳定信号出现 五大A股主力联袂力挺（东方财富网）；——证监会将就稳市场召开专题座谈会（东方财富网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "6468c2da4ca2",
+            "title": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "text": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202603/t20260317_854948180.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "bfb03a8748e3",
+            "title": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "text": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_xwzx/xwgg/202607/t20260710_855198329.html",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "01f707c2ccdc",
+            "title": "证监会今开座谈会 促进市场稳定健康发展",
+            "text": "证监会今开座谈会 促进市场稳定健康发展",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607203811942763.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "5003bd2bb3d8",
+            "title": "稳定信号出现 五大A股主力联袂力挺",
+            "text": "稳定信号出现 五大A股主力联袂力挺",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607203811956168.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "b7043ae16597",
+            "title": "证监会将就稳市场召开专题座谈会",
+            "text": "证监会将就稳市场召开专题座谈会",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607193811871440.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "d64a0660056d",
+            "title": "刷屏！大批A股公司 出手回购",
+            "text": "刷屏！大批A股公司 出手回购",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607203811886243.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "05ebff6d975c",
+            "title": "“国家队”率先出手护盘 稳市机制持续护航A股",
+            "text": "“国家队”率先出手护盘 稳市机制持续护航A股",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607203811889342.html",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-07-20T03:41:56.530360",
+      "total_fetched": 22,
+      "total_published": 7,
+      "sources_used": [
+        "东方财富网",
+        "中国理财网"
+      ]
+    }
+  },
   "2026-07-16": {
     "date": "2026-07-16",
     "title": "每日理财简报",
