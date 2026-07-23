@@ -1,4 +1,93 @@
 {
+  "2026-07-23": {
+    "date": "2026-07-23",
+    "title": "每日理财简报",
+    "summary": "2026-07-23理财市场关注要点：；估值方面共监测到2条相关动态；来源覆盖中国理财网等渠道；——国家金融监督管理总局发布《理财公司监管评级暂行办法》（中国理财网）；——关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...（中国理财网）；行业动态方面共监测到15条相关新闻；来源覆盖中国理财网、东方财富网等渠道；——吴清：坚决维护资本市场平稳健康运行 持续提升外资参与资本市场的便利度（东方财富网）；——北京国管：坚定看好中国资本市场发展前景 已统筹自有资金累计投入近百亿布局股市（东方财富网）；——2026年公募基金二季报（东方财富网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "6468c2da4ca2",
+            "title": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "text": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202603/t20260317_854948180.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "bfb03a8748e3",
+            "title": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "text": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_xwzx/xwgg/202607/t20260710_855198329.html",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "548a91059bde",
+            "title": "吴清：坚决维护资本市场平稳健康运行 持续提升外资参与资本市场的便利度",
+            "text": "吴清：坚决维护资本市场平稳健康运行 持续提升外资参与资本市场的便利度",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607223817259915.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "32a27f6cf235",
+            "title": "北京国管：坚定看好中国资本市场发展前景 已统筹自有资金累计投入近百亿布局股市",
+            "text": "北京国管：坚定看好中国资本市场发展前景 已统筹自有资金累计投入近百亿布局股市",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607223817266413.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "9880efb87751",
+            "title": "2026年公募基金二季报",
+            "text": "2026年公募基金二季报",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://topic.eastmoney.com/detail/gmjjejb2026.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "12dfa509bd70",
+            "title": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "text": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_gywm/wzjs/wzjj/",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "ffeff339febc",
+            "title": "银行业理财登记托管中心有限公司关于做好中国理财网·理财行业统一信息披露平台验收工作的通知",
+            "text": "银行业理财登记托管中心有限公司关于做好中国理财网·理财行业统一信息披露平台验收工作的通知",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202606/t20260605_855130714.html",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-07-23T03:27:28.461413",
+      "total_fetched": 20,
+      "total_published": 7,
+      "sources_used": [
+        "中国理财网",
+        "东方财富网"
+      ]
+    }
+  },
   "2026-07-20": {
     "date": "2026-07-20",
     "title": "每日理财简报",
