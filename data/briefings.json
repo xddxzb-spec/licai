@@ -1,4 +1,93 @@
 {
+  "2026-07-27": {
+    "date": "2026-07-27",
+    "title": "每日理财简报",
+    "summary": "2026-07-27理财市场关注要点：；估值方面共监测到2条相关动态；来源覆盖中国理财网等渠道；——国家金融监督管理总局发布《理财公司监管评级暂行办法》（中国理财网）；——关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...（中国理财网）；行业动态方面共监测到18条相关新闻；来源覆盖东方财富网、中国理财网等渠道；——长鑫科技开盘上涨471.59% 市值超越工行成A股“股王” 中一签可赚20420元（东方财富网）；——周末要闻汇总：中国证监会原副主席方星海接受审查调查（东方财富网）；——长鑫科技正式登陆科创板！首日市值登顶A股 背后中国科技产业天团陪跑（东方财富网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "6468c2da4ca2",
+            "title": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "text": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202603/t20260317_854948180.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "bfb03a8748e3",
+            "title": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "text": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_xwzx/xwgg/202607/t20260710_855198329.html",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "d120a5c0822c",
+            "title": "长鑫科技开盘上涨471.59% 市值超越工行成A股“股王” 中一签可赚20420元",
+            "text": "长鑫科技开盘上涨471.59% 市值超越工行成A股“股王” 中一签可赚20420元",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607273821354595.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "90bafec64e40",
+            "title": "周末要闻汇总：中国证监会原副主席方星海接受审查调查",
+            "text": "周末要闻汇总：中国证监会原副主席方星海接受审查调查",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607263821212088.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "5b93b2ecf32d",
+            "title": "长鑫科技正式登陆科创板！首日市值登顶A股 背后中国科技产业天团陪跑",
+            "text": "长鑫科技正式登陆科创板！首日市值登顶A股 背后中国科技产业天团陪跑",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607273821620589.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "1a819d186bb2",
+            "title": "长鑫科技涨超460% 成为A股历史上首只单日成交额突破1000亿元的个股",
+            "text": "长鑫科技涨超460% 成为A股历史上首只单日成交额突破1000亿元的个股",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607273821805985.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "aaf4ed0770c4",
+            "title": "首批主动管理ETF名单来了！",
+            "text": "首批主动管理ETF名单来了！",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://topic.eastmoney.com/detail/zdgletf2026.html",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-07-27T03:41:40.623376",
+      "total_fetched": 23,
+      "total_published": 7,
+      "sources_used": [
+        "东方财富网",
+        "中国理财网"
+      ]
+    }
+  },
   "2026-07-23": {
     "date": "2026-07-23",
     "title": "每日理财简报",
