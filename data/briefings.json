@@ -1,4 +1,102 @@
 {
+  "2026-07-30": {
+    "date": "2026-07-30",
+    "title": "每日理财简报",
+    "summary": "2026-07-30理财市场关注要点：；估值方面共监测到3条相关动态；来源覆盖中国理财网、东方财富网等渠道；——美联储维持利率不变（东方财富网）；——国家金融监督管理总局发布《理财公司监管评级暂行办法》（中国理财网）；——关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...（中国理财网）；行业动态方面共监测到13条相关新闻；来源覆盖中国理财网、东方财富网等渠道；——韩股又巨震 跌至熔断！韩国财长发声：正研究稳股市措施（东方财富网）；——长鑫科技上市，市值登顶A股，中一签赚超两万（东方财富网）；——国家金融监督管理总局指定-全国银行业理财产品信息查询网站（中国理财网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "69d8cf5cfeb9",
+            "title": "美联储维持利率不变",
+            "text": "美联储维持利率不变",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://topic.eastmoney.com/detail/mlc0729.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "6468c2da4ca2",
+            "title": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "text": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202603/t20260317_854948180.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "bfb03a8748e3",
+            "title": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "text": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_xwzx/xwgg/202607/t20260710_855198329.html",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "705a9ba1fbed",
+            "title": "韩股又巨震 跌至熔断！韩国财长发声：正研究稳股市措施",
+            "text": "韩股又巨震 跌至熔断！韩国财长发声：正研究稳股市措施",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202607293824902422.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "af66914aece0",
+            "title": "长鑫科技上市，市值登顶A股，中一签赚超两万",
+            "text": "长鑫科技上市，市值登顶A股，中一签赚超两万",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://topic.eastmoney.com/detail/xcksjdfq.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "12dfa509bd70",
+            "title": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "text": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_gywm/wzjs/wzjj/",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "a8c3ad9fe099",
+            "title": "中国银行业理财市场半年报告（2026年上）",
+            "text": "中国银行业理财市场半年报告（2026年上）",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202607/t20260728_855246758.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "ffeff339febc",
+            "title": "银行业理财登记托管中心有限公司关于做好中国理财网·理财行业统一信息披露平台验收工作的通知",
+            "text": "银行业理财登记托管中心有限公司关于做好中国理财网·理财行业统一信息披露平台验收工作的通知",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202607/t20260728_855246757.html",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-07-30T02:49:41.043404",
+      "total_fetched": 18,
+      "total_published": 8,
+      "sources_used": [
+        "中国理财网",
+        "东方财富网"
+      ]
+    }
+  },
   "2026-07-27": {
     "date": "2026-07-27",
     "title": "每日理财简报",
