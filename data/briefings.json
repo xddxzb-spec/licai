@@ -1,4 +1,102 @@
 {
+  "2026-08-06": {
+    "date": "2026-08-06",
+    "title": "每日理财简报",
+    "summary": "2026-08-06理财市场关注要点：；估值方面共监测到3条相关动态；来源覆盖中国理财网、东方财富网等渠道；——沪指涨1.47% 科创50指数大涨4.78% 半导体板块爆发（东方财富网）；——国家金融监督管理总局发布《理财公司监管评级暂行办法》（中国理财网）；——关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...（中国理财网）；行业动态方面共监测到12条相关新闻；来源覆盖中国理财网等渠道；——国家金融监督管理总局指定-全国银行业理财产品信息查询网站（中国理财网）；——中国银行业理财市场半年报告（2026年上）（中国理财网）；——银行业理财登记托管中心有限公司关于做好中国理财网·理财行业统一信息披露平台验收工作的通知（中国理财网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "2617aa79fb14",
+            "title": "沪指涨1.47% 科创50指数大涨4.78% 半导体板块爆发",
+            "text": "沪指涨1.47% 科创50指数大涨4.78% 半导体板块爆发",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202608053832529810.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "6468c2da4ca2",
+            "title": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "text": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202603/t20260317_854948180.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "bfb03a8748e3",
+            "title": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "text": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_xwzx/xwgg/202607/t20260710_855198329.html",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "12dfa509bd70",
+            "title": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "text": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_gywm/wzjs/wzjj/",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "a8c3ad9fe099",
+            "title": "中国银行业理财市场半年报告（2026年上）",
+            "text": "中国银行业理财市场半年报告（2026年上）",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202607/t20260728_855246758.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "ffeff339febc",
+            "title": "银行业理财登记托管中心有限公司关于做好中国理财网·理财行业统一信息披露平台验收工作的通知",
+            "text": "银行业理财登记托管中心有限公司关于做好中国理财网·理财行业统一信息披露平台验收工作的通知",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202607/t20260728_855246757.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "7536754409f3",
+            "title": "《银行业理财信息登记数据元》金融行业标准发布",
+            "text": "《银行业理财信息登记数据元》金融行业标准发布",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202607/t20260728_855246756.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "f40b10f39821",
+            "title": "关于中国理财网·理财行业统一信息披露平台优化升级的通知",
+            "text": "关于中国理财网·理财行业统一信息披露平台优化升级的通知",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202607/t20260728_855246755.html",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-08-06T03:15:11.138392",
+      "total_fetched": 16,
+      "total_published": 8,
+      "sources_used": [
+        "中国理财网",
+        "东方财富网"
+      ]
+    }
+  },
   "2026-08-03": {
     "date": "2026-08-03",
     "title": "每日理财简报",
