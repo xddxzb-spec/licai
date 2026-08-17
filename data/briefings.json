@@ -1,4 +1,102 @@
 {
+  "2026-08-17": {
+    "date": "2026-08-17",
+    "title": "每日理财简报",
+    "summary": "2026-08-17理财市场关注要点：；估值方面共监测到3条相关动态；来源覆盖东方财富网、中国理财网等渠道；——MSCI中国指数8月季度调整（东方财富网）；——国家金融监督管理总局发布《理财公司监管评级暂行办法》（中国理财网）；——关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...（中国理财网）；行业动态方面共监测到17条相关新闻；来源覆盖东方财富网、中国理财网等渠道；——周末要闻汇总：央行发布7月金融统计数据（东方财富网）；——贵不贵？买不买？“人形机器人第一股”来袭 五大基金经理最新研判来了（东方财富网）；——全球股市陆续“熊去” 下周A股能否“牛来”？（东方财富网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "7fe08b8836be",
+            "title": "MSCI中国指数8月季度调整",
+            "text": "MSCI中国指数8月季度调整",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://topic.eastmoney.com/detail/msci8ytz.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "6468c2da4ca2",
+            "title": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "text": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202603/t20260317_854948180.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "bfb03a8748e3",
+            "title": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "text": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_xwzx/xwgg/202607/t20260710_855198329.html",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "c4c8b6aef0f8",
+            "title": "周末要闻汇总：央行发布7月金融统计数据",
+            "text": "周末要闻汇总：央行发布7月金融统计数据",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202608163842493953.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "03b3970495b6",
+            "title": "贵不贵？买不买？“人形机器人第一股”来袭 五大基金经理最新研判来了",
+            "text": "贵不贵？买不买？“人形机器人第一股”来袭 五大基金经理最新研判来了",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202608163842565074.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "f49d8336340b",
+            "title": "全球股市陆续“熊去” 下周A股能否“牛来”？",
+            "text": "全球股市陆续“熊去” 下周A股能否“牛来”？",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202608163842476555.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "90be5dc9045a",
+            "title": "中信证券：国产算力未来将兼具工业品与公用事业属性 或将成为新一轮产业升级和资本形成的重要抓手",
+            "text": "中信证券：国产算力未来将兼具工业品与公用事业属性 或将成为新一轮产业升级和资本形成的重要抓手",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202608173842618251.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "12dfa509bd70",
+            "title": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "text": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_gywm/wzjs/wzjj/",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-08-17T01:41:20.889813",
+      "total_fetched": 21,
+      "total_published": 8,
+      "sources_used": [
+        "东方财富网",
+        "中国理财网"
+      ]
+    }
+  },
   "2026-08-13": {
     "date": "2026-08-13",
     "title": "每日理财简报",
