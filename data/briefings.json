@@ -1,4 +1,111 @@
 {
+  "2026-08-20": {
+    "date": "2026-08-20",
+    "title": "每日理财简报",
+    "summary": "2026-08-20理财市场关注要点：；估值方面共监测到4条相关动态；来源覆盖中国理财网、东方财富网等渠道；——A股三大指数集体收跌 宇树科技上市首日大涨460%（东方财富网）；——美国财政部宣布将长期国债回购操作规模至少扩大一倍（东方财富网）；——国家金融监督管理总局发布《理财公司监管评级暂行办法》（中国理财网）；行业动态方面共监测到16条相关新闻；来源覆盖中国理财网、东方财富网等渠道；——全球瞩目！美联储会议纪要今夜来袭 能否抑制“美债风暴”？（东方财富网）；——多只宽基ETF显著放量 沪深300ETF华泰柏瑞尾盘近半小时成交超30亿元（东方财富网）；——经济日报：警惕国际资本炒作粮食危机（东方财富网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "803fba58fbe5",
+            "title": "A股三大指数集体收跌 宇树科技上市首日大涨460%",
+            "text": "A股三大指数集体收跌 宇树科技上市首日大涨460%",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202608193846206086.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "5694bcaa318e",
+            "title": "美国财政部宣布将长期国债回购操作规模至少扩大一倍",
+            "text": "美国财政部宣布将长期国债回购操作规模至少扩大一倍",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202608193846511891.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "6468c2da4ca2",
+            "title": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "text": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202603/t20260317_854948180.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "bfb03a8748e3",
+            "title": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "text": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_xwzx/xwgg/202607/t20260710_855198329.html",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "272b3bc31d24",
+            "title": "全球瞩目！美联储会议纪要今夜来袭 能否抑制“美债风暴”？",
+            "text": "全球瞩目！美联储会议纪要今夜来袭 能否抑制“美债风暴”？",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202608193846036554.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "ec95a0e49151",
+            "title": "多只宽基ETF显著放量 沪深300ETF华泰柏瑞尾盘近半小时成交超30亿元",
+            "text": "多只宽基ETF显著放量 沪深300ETF华泰柏瑞尾盘近半小时成交超30亿元",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202608193846202745.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "dfccafa975b7",
+            "title": "经济日报：警惕国际资本炒作粮食危机",
+            "text": "经济日报：警惕国际资本炒作粮食危机",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202608203846744644.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "12dfa509bd70",
+            "title": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "text": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_gywm/wzjs/wzjj/",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "a8c3ad9fe099",
+            "title": "中国银行业理财市场半年报告（2026年上）",
+            "text": "中国银行业理财市场半年报告（2026年上）",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202607/t20260728_855246758.html",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-08-20T01:37:15.742269",
+      "total_fetched": 21,
+      "total_published": 9,
+      "sources_used": [
+        "中国理财网",
+        "东方财富网"
+      ]
+    }
+  },
   "2026-08-17": {
     "date": "2026-08-17",
     "title": "每日理财简报",
