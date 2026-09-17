@@ -1,4 +1,111 @@
 {
+  "2026-09-17": {
+    "date": "2026-09-17",
+    "title": "每日理财简报",
+    "summary": "2026-09-17理财市场关注要点：；估值方面共监测到4条相关动态；来源覆盖东方财富网、中国理财网等渠道；——创业板指涨近2% 科创50指数涨超4% 半导体板块爆发（东方财富网）；——美股三大指数集体收跌、道指创6月中旬以来收盘新低 国际油价走低（东方财富网）；——国家金融监督管理总局发布《理财公司监管评级暂行办法》（中国理财网）；行业动态方面共监测到16条相关新闻；来源覆盖东方财富网、中国理财网等渠道；——今夜揭晓！一图看懂美国加息后 A股怎么走（东方财富网）；——加密货币重大利空！里程碑法案遭否决（东方财富网）；——中金：美加息对A股能否有持续影响尚待观察（东方财富网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "59bfb27a57c2",
+            "title": "创业板指涨近2% 科创50指数涨超4% 半导体板块爆发",
+            "text": "创业板指涨近2% 科创50指数涨超4% 半导体板块爆发",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202609163876004139.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "91de27fc4cb9",
+            "title": "美股三大指数集体收跌、道指创6月中旬以来收盘新低 国际油价走低",
+            "text": "美股三大指数集体收跌、道指创6月中旬以来收盘新低 国际油价走低",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202609163876301918.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "6468c2da4ca2",
+            "title": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "text": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202603/t20260317_854948180.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "bfb03a8748e3",
+            "title": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "text": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_xwzx/xwgg/202607/t20260710_855198329.html",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "0dbb22fb98aa",
+            "title": "今夜揭晓！一图看懂美国加息后 A股怎么走",
+            "text": "今夜揭晓！一图看懂美国加息后 A股怎么走",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202609163876161055.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "b7932139523f",
+            "title": "加密货币重大利空！里程碑法案遭否决",
+            "text": "加密货币重大利空！里程碑法案遭否决",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://topic.eastmoney.com/detail/jmhbzdlk.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "e387efdc2e72",
+            "title": "中金：美加息对A股能否有持续影响尚待观察",
+            "text": "中金：美加息对A股能否有持续影响尚待观察",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202609173876892634.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "12dfa509bd70",
+            "title": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "text": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_gywm/wzjs/wzjj/",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "607a817a4f33",
+            "title": "理财行业统一信息披露平台9月1日全面上线运行",
+            "text": "理财行业统一信息披露平台9月1日全面上线运行",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202609/t20260903_855384072.html",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-09-17T04:27:48.573825",
+      "total_fetched": 21,
+      "total_published": 9,
+      "sources_used": [
+        "东方财富网",
+        "中国理财网"
+      ]
+    }
+  },
   "2026-09-14": {
     "date": "2026-09-14",
     "title": "每日理财简报",
