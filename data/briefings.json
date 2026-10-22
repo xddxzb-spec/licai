@@ -1,4 +1,102 @@
 {
+  "2026-10-22": {
+    "date": "2026-10-22",
+    "title": "每日理财简报",
+    "summary": "2026-10-22理财市场关注要点：；估值方面共监测到3条相关动态；来源覆盖中国理财网、东方财富网等渠道；——A股三大指数收跌 成交额不足1.5万亿 IT服务板块逆市走强（东方财富网）；——国家金融监督管理总局发布《理财公司监管评级暂行办法》（中国理财网）；——关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...（中国理财网）；行业动态方面共监测到16条相关新闻；来源覆盖中国理财网、东方财富网等渠道；——最后10分钟进场！多只宽基ETF放量拉升 近2000亿元入市（东方财富网）；——证监会同意首批18只主动ETF注册（东方财富网）；——产融深度结合打通投资循环堵点 资本精准赋能重塑科技投资逻辑（东方财富网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "02ce818e15ce",
+            "title": "A股三大指数收跌 成交额不足1.5万亿 IT服务板块逆市走强",
+            "text": "A股三大指数收跌 成交额不足1.5万亿 IT服务板块逆市走强",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202610213902586860.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "6468c2da4ca2",
+            "title": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "text": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202603/t20260317_854948180.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "bfb03a8748e3",
+            "title": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "text": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_xwzx/xwgg/202607/t20260710_855198329.html",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "cb3de302d91d",
+            "title": "最后10分钟进场！多只宽基ETF放量拉升 近2000亿元入市",
+            "text": "最后10分钟进场！多只宽基ETF放量拉升 近2000亿元入市",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202610213902629343.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "719fbdca00ff",
+            "title": "证监会同意首批18只主动ETF注册",
+            "text": "证监会同意首批18只主动ETF注册",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://topic.eastmoney.com/detail/zdgletf2026.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "bd8fc9b8edba",
+            "title": "产融深度结合打通投资循环堵点 资本精准赋能重塑科技投资逻辑",
+            "text": "产融深度结合打通投资循环堵点 资本精准赋能重塑科技投资逻辑",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202610223903832016.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "12dfa509bd70",
+            "title": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "text": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_gywm/wzjs/wzjj/",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "607a817a4f33",
+            "title": "理财行业统一信息披露平台9月1日全面上线运行",
+            "text": "理财行业统一信息披露平台9月1日全面上线运行",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202609/t20260903_855384072.html",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-10-22T04:13:18.311380",
+      "total_fetched": 20,
+      "total_published": 8,
+      "sources_used": [
+        "中国理财网",
+        "东方财富网"
+      ]
+    }
+  },
   "2026-10-19": {
     "date": "2026-10-19",
     "title": "每日理财简报",
