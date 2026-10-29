@@ -1,4 +1,120 @@
 {
+  "2026-10-29": {
+    "date": "2026-10-29",
+    "title": "每日理财简报",
+    "summary": "2026-10-29理财市场关注要点：；估值方面共监测到7条相关动态；来源覆盖东方财富网、中国理财网等渠道；——美联储如期维持基准利率不变 两名票委主张加息25个基点（东方财富网）；——A股三大指数反弹 创业板指大涨3.4% 逾4100只股上涨（东方财富网）；——A股借调整降杠杆：两融余额回撤6200亿 融资盘整体风险可控（东方财富网）；行业动态方面共监测到16条相关新闻；来源覆盖东方财富网、中国理财网等渠道；——历史时刻！A股市值“一哥”“二哥”再创新高 四大行总市值突破10万亿（东方财富网）；——中国太保：第三季度净利润同比下降68.4% 业绩变动主要受资本市场波动影响（东方财富网）；——国家金融监督管理总局指定-全国银行业理财产品信息查询网站（中国理财网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "1a76e6119650",
+            "title": "美联储如期维持基准利率不变 两名票委主张加息25个基点",
+            "text": "美联储如期维持基准利率不变 两名票委主张加息25个基点",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202610293912759979.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "0722a9984d15",
+            "title": "A股三大指数反弹 创业板指大涨3.4% 逾4100只股上涨",
+            "text": "A股三大指数反弹 创业板指大涨3.4% 逾4100只股上涨",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202610283911792487.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "8fda6b03ace2",
+            "title": "A股借调整降杠杆：两融余额回撤6200亿 融资盘整体风险可控",
+            "text": "A股借调整降杠杆：两融余额回撤6200亿 融资盘整体风险可控",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202610283912517425.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "69d8cf5cfeb9",
+            "title": "美联储维持利率不变",
+            "text": "美联储维持利率不变",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://topic.eastmoney.com/detail/mlc10.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "af682a6fa464",
+            "title": "东北证券策略首席张超越：盈利加速与估值出清共振，A股核心资产正步入战略配置“击球区”",
+            "text": "东北证券策略首席张超越：盈利加速与估值出清共振，A股核心资产正步入战略配置“击球区”",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202610293913681653.html",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "a8f32d9b6cd8",
+            "title": "历史时刻！A股市值“一哥”“二哥”再创新高 四大行总市值突破10万亿",
+            "text": "历史时刻！A股市值“一哥”“二哥”再创新高 四大行总市值突破10万亿",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202610293913527497.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "6385c6a8cb75",
+            "title": "中国太保：第三季度净利润同比下降68.4% 业绩变动主要受资本市场波动影响",
+            "text": "中国太保：第三季度净利润同比下降68.4% 业绩变动主要受资本市场波动影响",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202610283911944274.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "12dfa509bd70",
+            "title": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "text": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_gywm/wzjs/wzjj/",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "607a817a4f33",
+            "title": "理财行业统一信息披露平台9月1日全面上线运行",
+            "text": "理财行业统一信息披露平台9月1日全面上线运行",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202609/t20260903_855384072.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "a8c3ad9fe099",
+            "title": "中国银行业理财市场半年报告（2026年上）",
+            "text": "中国银行业理财市场半年报告（2026年上）",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202607/t20260728_855246758.html",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-10-29T05:18:23.505404",
+      "total_fetched": 24,
+      "total_published": 10,
+      "sources_used": [
+        "东方财富网",
+        "中国理财网"
+      ]
+    }
+  },
   "2026-10-26": {
     "date": "2026-10-26",
     "title": "每日理财简报",
