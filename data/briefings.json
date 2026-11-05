@@ -1,4 +1,102 @@
 {
+  "2026-11-05": {
+    "date": "2026-11-05",
+    "title": "每日理财简报",
+    "summary": "2026-11-05理财市场关注要点：；估值方面共监测到3条相关动态；来源覆盖中国理财网、东方财富网等渠道；——创业板指大涨逾6% 科创50指数飙升近10% 成交额突破2万亿（东方财富网）；——国家金融监督管理总局发布《理财公司监管评级暂行办法》（中国理财网）；——关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...（中国理财网）；行业动态方面共监测到18条相关新闻；来源覆盖中国理财网、东方财富网等渠道；——重返2万亿！A股再现“大奇迹日” 双创吹响反攻号角！发生了什么？（东方财富网）；——央行加力实施股票回购增持再贷款政策（东方财富网）；——央行：11月15日起上调金融机构外汇存款准备金率2个百分点（东方财富网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "3df5a70ee2fd",
+            "title": "创业板指大涨逾6% 科创50指数飙升近10% 成交额突破2万亿",
+            "text": "创业板指大涨逾6% 科创50指数飙升近10% 成交额突破2万亿",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202611043921903739.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "6468c2da4ca2",
+            "title": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "text": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202603/t20260317_854948180.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "bfb03a8748e3",
+            "title": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "text": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_xwzx/xwgg/202607/t20260710_855198329.html",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "be7b31222445",
+            "title": "重返2万亿！A股再现“大奇迹日” 双创吹响反攻号角！发生了什么？",
+            "text": "重返2万亿！A股再现“大奇迹日” 双创吹响反攻号角！发生了什么？",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202611043921918565.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "971f1096d6bd",
+            "title": "央行加力实施股票回购增持再贷款政策",
+            "text": "央行加力实施股票回购增持再贷款政策",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://topic.eastmoney.com/detail/yhjlzchgdkzc.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "6644b2e1b2e5",
+            "title": "央行：11月15日起上调金融机构外汇存款准备金率2个百分点",
+            "text": "央行：11月15日起上调金融机构外汇存款准备金率2个百分点",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://topic.eastmoney.com/detail/yhstwhckzbjl.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "6a9cb3bd2f4e",
+            "title": "一系列政策组合拳出炉，业内认为提振投资者信心，A股迎来强劲反弹",
+            "text": "一系列政策组合拳出炉，业内认为提振投资者信心，A股迎来强劲反弹",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202611053923384626.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "12dfa509bd70",
+            "title": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "text": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_gywm/wzjs/wzjj/",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-11-05T06:06:16.337059",
+      "total_fetched": 22,
+      "total_published": 8,
+      "sources_used": [
+        "中国理财网",
+        "东方财富网"
+      ]
+    }
+  },
   "2026-11-02": {
     "date": "2026-11-02",
     "title": "每日理财简报",
