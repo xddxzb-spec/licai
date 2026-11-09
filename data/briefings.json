@@ -1,4 +1,93 @@
 {
+  "2026-11-09": {
+    "date": "2026-11-09",
+    "title": "每日理财简报",
+    "summary": "2026-11-09理财市场关注要点：；估值方面共监测到2条相关动态；来源覆盖中国理财网等渠道；——国家金融监督管理总局发布《理财公司监管评级暂行办法》（中国理财网）；——关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...（中国理财网）；行业动态方面共监测到18条相关新闻；来源覆盖中国理财网、东方财富网等渠道；——国常会部署重点工作 首提完善资本市场稳市机制（东方财富网）；——周末要闻汇总：国常会要求完善资本市场稳市机制 增强股市内在稳定性（东方财富网）；——A股靠什么托举？这些重要变量正在集聚（东方财富网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "6468c2da4ca2",
+            "title": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "text": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202603/t20260317_854948180.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "bfb03a8748e3",
+            "title": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "text": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_xwzx/xwgg/202607/t20260710_855198329.html",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "270cc5336359",
+            "title": "国常会部署重点工作 首提完善资本市场稳市机制",
+            "text": "国常会部署重点工作 首提完善资本市场稳市机制",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202611083925687598.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "68b3f38f0745",
+            "title": "周末要闻汇总：国常会要求完善资本市场稳市机制 增强股市内在稳定性",
+            "text": "周末要闻汇总：国常会要求完善资本市场稳市机制 增强股市内在稳定性",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202611083925610461.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "38702d329e79",
+            "title": "A股靠什么托举？这些重要变量正在集聚",
+            "text": "A股靠什么托举？这些重要变量正在集聚",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202611093925775778.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "537054d97fe4",
+            "title": "兴业证券市场策略首席吴峰：A股反弹修复开启，制度红利夯实市场底部",
+            "text": "兴业证券市场策略首席吴峰：A股反弹修复开启，制度红利夯实市场底部",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202611093926138446.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "12dfa509bd70",
+            "title": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "text": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_gywm/wzjs/wzjj/",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-11-09T05:43:55.481813",
+      "total_fetched": 21,
+      "total_published": 7,
+      "sources_used": [
+        "中国理财网",
+        "东方财富网"
+      ]
+    }
+  },
   "2026-11-05": {
     "date": "2026-11-05",
     "title": "每日理财简报",
