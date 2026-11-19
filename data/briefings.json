@@ -1,4 +1,111 @@
 {
+  "2026-11-19": {
+    "date": "2026-11-19",
+    "title": "每日理财简报",
+    "summary": "2026-11-19理财市场关注要点：；估值方面共监测到4条相关动态；来源覆盖中国理财网、东方财富网等渠道；——科创50指数涨超2% 三市成交额不足1.4万亿 算力租赁概念掀涨停潮（东方财富网）；——Anthropic IPO 估值剑指1.5万亿美元（东方财富网）；——国家金融监督管理总局发布《理财公司监管评级暂行办法》（中国理财网）；行业动态方面共监测到17条相关新闻；来源覆盖中国理财网、东方财富网等渠道；——四大证券报齐发文：勿让“小作文”扰乱资本市场 官方及时发声稳预期（东方财富网）；——经济日报：稳资本市场意义重大（东方财富网）；——基金公司密集“安抚”基民：“鸡汤”少了，操作建议多了（东方财富网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "09478f75d375",
+            "title": "科创50指数涨超2% 三市成交额不足1.4万亿 算力租赁概念掀涨停潮",
+            "text": "科创50指数涨超2% 三市成交额不足1.4万亿 算力租赁概念掀涨停潮",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202611183933933885.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "ff0a80f5da96",
+            "title": "Anthropic IPO 估值剑指1.5万亿美元",
+            "text": "Anthropic IPO 估值剑指1.5万亿美元",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://topic.eastmoney.com/detail/anthipo.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "6468c2da4ca2",
+            "title": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "text": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202603/t20260317_854948180.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "bfb03a8748e3",
+            "title": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "text": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_xwzx/xwgg/202607/t20260710_855198329.html",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "3e4c79501977",
+            "title": "四大证券报齐发文：勿让“小作文”扰乱资本市场 官方及时发声稳预期",
+            "text": "四大证券报齐发文：勿让“小作文”扰乱资本市场 官方及时发声稳预期",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202611193934499755.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "f81abd73055f",
+            "title": "经济日报：稳资本市场意义重大",
+            "text": "经济日报：稳资本市场意义重大",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202611193934396946.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "614c89c2f785",
+            "title": "基金公司密集“安抚”基民：“鸡汤”少了，操作建议多了",
+            "text": "基金公司密集“安抚”基民：“鸡汤”少了，操作建议多了",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202611193934993817.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "12dfa509bd70",
+            "title": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "text": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_gywm/wzjs/wzjj/",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "607a817a4f33",
+            "title": "理财行业统一信息披露平台9月1日全面上线运行",
+            "text": "理财行业统一信息披露平台9月1日全面上线运行",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202609/t20260903_855384072.html",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-11-19T06:54:40.543933",
+      "total_fetched": 22,
+      "total_published": 9,
+      "sources_used": [
+        "中国理财网",
+        "东方财富网"
+      ]
+    }
+  },
   "2026-11-16": {
     "date": "2026-11-16",
     "title": "每日理财简报",
