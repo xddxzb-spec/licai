@@ -1,4 +1,93 @@
 {
+  "2026-11-26": {
+    "date": "2026-11-26",
+    "title": "每日理财简报",
+    "summary": "2026-11-26理财市场关注要点：；估值方面共监测到2条相关动态；来源覆盖中国理财网等渠道；——国家金融监督管理总局发布《理财公司监管评级暂行办法》（中国理财网）；——关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...（中国理财网）；行业动态方面共监测到17条相关新闻；来源覆盖中国理财网、东方财富网等渠道；——A股又出新概念？今天“金”字爆发（东方财富网）；——A股重磅！超4600亿元资金在路上！建行、工行、中行密集表态（东方财富网）；——近三个月跌幅不到8%！这只科技基金，凭什么拿下主动权益季军？（东方财富网）",
+    "sections": [
+      {
+        "title": "理财估值新闻",
+        "items": [
+          {
+            "id": "6468c2da4ca2",
+            "title": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "text": "国家金融监督管理总局发布《理财公司监管评级暂行办法》",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202603/t20260317_854948180.html",
+            "category": "理财估值新闻"
+          },
+          {
+            "id": "bfb03a8748e3",
+            "title": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "text": "关于举办“防风险 强监管 开新局——金融强国与债券市场高质量发展”主题征文活动...",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_xwzx/xwgg/202607/t20260710_855198329.html",
+            "category": "理财估值新闻"
+          }
+        ]
+      },
+      {
+        "title": "理财行业泛新闻",
+        "items": [
+          {
+            "id": "dd072f0a967e",
+            "title": "A股又出新概念？今天“金”字爆发",
+            "text": "A股又出新概念？今天“金”字爆发",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202611263940460913.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "f33b392027bc",
+            "title": "A股重磅！超4600亿元资金在路上！建行、工行、中行密集表态",
+            "text": "A股重磅！超4600亿元资金在路上！建行、工行、中行密集表态",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202611253939893180.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "b97cd0f2cec4",
+            "title": "近三个月跌幅不到8%！这只科技基金，凭什么拿下主动权益季军？",
+            "text": "近三个月跌幅不到8%！这只科技基金，凭什么拿下主动权益季军？",
+            "source": "东方财富网",
+            "siteUrl": "https://www.eastmoney.com/",
+            "url": "https://finance.eastmoney.com/a/202611263940578845.html",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "12dfa509bd70",
+            "title": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "text": "国家金融监督管理总局指定-全国银行业理财产品信息查询网站",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_gywm/wzjs/wzjj/",
+            "category": "理财行业泛新闻"
+          },
+          {
+            "id": "607a817a4f33",
+            "title": "理财行业统一信息披露平台9月1日全面上线运行",
+            "text": "理财行业统一信息披露平台9月1日全面上线运行",
+            "source": "中国理财网",
+            "siteUrl": "https://www.chinawealth.com.cn/",
+            "url": "https://www.chinawealth.com.cn/lc_zxgg/202609/t20260903_855384072.html",
+            "category": "理财行业泛新闻"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "generated_at": "2026-11-26T07:48:51.729894",
+      "total_fetched": 20,
+      "total_published": 7,
+      "sources_used": [
+        "中国理财网",
+        "东方财富网"
+      ]
+    }
+  },
   "2026-11-23": {
     "date": "2026-11-23",
     "title": "每日理财简报",
